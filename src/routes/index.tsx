@@ -1,0 +1,396 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { CountUp } from "@/components/count-up";
+import { CtaBand } from "@/components/cta-band";
+import { ImageRail } from "@/components/image-rail";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { Button } from "@/components/ui/button";
+import { useQuote } from "@/lib/quote";
+import {
+  CERTS,
+  CLIENTS,
+  GALLERY,
+  INDUSTRIES,
+  LEADERSHIP,
+  MARQUEE,
+  PLANTS,
+  PROCESS,
+  PRODUCTS,
+  STATS,
+} from "@/lib/site";
+import { useEffect, useState } from "react";
+
+export const Route = createFileRoute("/")({ component: Home });
+
+function Home() {
+  const { setOpen } = useQuote();
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  return (
+    <main>
+      <section className="relative flex min-h-svh items-end overflow-hidden bg-ink text-fg">
+        {reduceMotion ? (
+          <img
+            src="/images/hero-line.jpg"
+            alt=""
+            className="hero-media absolute inset-0 size-full object-cover"
+          />
+        ) : (
+          <video
+            className="hero-media absolute inset-0 size-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hero-line.jpg"
+          >
+            <source src="/videos/hero-line.mp4" type="video/mp4" />
+          </video>
+        )}
+        <div className="hero-scrim absolute inset-0" />
+        <div className="noise" />
+        <div className="hero-enter site-wrap-wide relative z-10 w-full pb-16 pt-32 md:pb-24">
+          <p className="eyebrow mb-6">Udaan Paper Industries</p>
+          <h1 className="max-w-5xl font-display text-display">
+            Gain a new perspective
+            <br />
+            in packaging.
+          </h1>
+          <p className="mt-8 max-w-xl text-lede text-fg-muted">
+            Fully automatic plants in Pithampur and Kanpur. Corrugated boxes,
+            sheets and rolls for the brands that feed, clothe and move India.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button asChild>
+              <Link to="/solutions">Explore solutions</Link>
+            </Button>
+            <Button variant="outline" className="text-fg" onClick={() => setOpen(true)}>
+              Request a quote
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <ImageRail images={GALLERY} className="bg-ink" />
+
+      <div className="overflow-hidden border-y border-line bg-ink-2 py-4 text-fg">
+        <div className="marquee-track">
+          {[...MARQUEE, ...MARQUEE].map((item, i) => (
+            <span
+              key={`${item}-${i}`}
+              className="flex items-center gap-8 font-sans text-sm font-medium tracking-tight text-fg-muted"
+            >
+              {item}
+              <span className="text-kraft" aria-hidden>
+                /
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="bg-paper py-12 md:py-16">
+        <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <SectionHeading
+              eyebrow="The company"
+              title={
+                <>
+                  Two plants. One specification.
+                  <em> Relentless delivery.</em>
+                </>
+              }
+              lede="Udaan Paper Industries Limited is a corrugated packaging manufacturer with fully automatic production at Pithampur, Madhya Pradesh and Kanpur, Uttar Pradesh — close to the FMCG, food and textile clusters we serve."
+            />
+            <Reveal delay={80}>
+              <p className="mt-6 max-w-xl text-ink-muted">
+                From board design to the dock, the process stays in-house: corrugation,
+                conversion, a working laboratory, and a fleet of twenty-six trucks.
+                Named among India’s Top 10 corrugated box manufacturers in 2023.
+              </p>
+              <Link
+                to="/about"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium tracking-tight text-ink-fg transition-colors hover:text-ink-muted"
+              >
+                Read the story
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </Reveal>
+          </div>
+          <Reveal variant="image" className="img-zoom md:col-span-6" delay={100}>
+            <img
+              src="/images/real-warehouse.jpg"
+              alt="Kraft boxes staged in the Pithampur warehouse"
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-y border-line-paper bg-paper-2">
+        <div className="site-wrap-wide grid grid-cols-2 gap-px bg-line-paper md:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="bg-paper-2 px-5 py-10 md:px-8 md:py-14">
+              <p className="font-display text-4xl text-ink-fg md:text-5xl">
+                <CountUp value={stat.value} suffix={stat.suffix} />
+              </p>
+              <p className="mt-3 text-sm tracking-tight text-ink-muted">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16">
+        <div className="site-wrap-wide grid items-end gap-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <SectionHeading
+              eyebrow="The board"
+              title="The people who run the plants."
+              lede="Brothers who came up in corrugated — not a hired-in letterhead."
+            />
+            <Link
+              to="/about"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-tight"
+            >
+              Meet the promoters
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:col-span-8">
+            {LEADERSHIP.filter((p) => p.image).map((person, i) => (
+              <Reveal key={person.name} delay={i * 60}>
+                <Link to="/about" className="group block">
+                  <div className="img-zoom overflow-hidden bg-sand">
+                    <img
+                      src={person.image!}
+                      alt={person.name}
+                      className="aspect-[4/5] w-full object-cover object-top"
+                    />
+                  </div>
+                  <p className="mt-3 font-display text-xl">{person.name}</p>
+                  <p className="mt-1 text-sm text-ink-muted">{person.role}</p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16">
+        <div className="site-wrap-wide">
+          <SectionHeading
+            eyebrow="Solutions"
+            title={
+              <>
+                Packaging, specified
+                <em> for the product.</em>
+              </>
+            }
+            lede="Boxes, printed cartons, sheets, rolls and engineered structures — produced on automatic lines, qualified in our laboratory."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {PRODUCTS.map((product, i) => (
+              <Reveal key={product.slug} delay={i * 60}>
+                <Link
+                  to="/solutions"
+                  hash={product.slug}
+                  className="group block border border-line-paper bg-paper transition-colors hover:border-ink"
+                >
+                  <div className="img-zoom">
+                    <img
+                      src={product.image}
+                      alt=""
+                      className="aspect-[16/10] w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex items-start justify-between gap-4 p-6 md:p-8">
+                    <div>
+                      <p className="eyebrow">{product.kicker}</p>
+                      <h3 className="mt-3 font-display text-3xl">{product.name}</h3>
+                      <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-muted">
+                        {product.summary}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="mt-1 size-5 shrink-0 text-ink-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink py-12 text-fg md:py-16">
+        <div className="site-wrap-wide">
+          <SectionHeading
+            onDark
+            eyebrow="The Udaan cycle"
+            title={
+              <>
+                From brief to
+                <em> dock.</em>
+              </>
+            }
+            lede="Five steps, none of them outsourced. The same team that designs the pack qualifies it and puts it on a truck."
+          />
+          <div className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
+            {PROCESS.map((step, i) => (
+              <Reveal
+                key={step.n}
+                delay={i * 50}
+                className="bg-ink px-5 py-8 md:px-6 md:py-10"
+              >
+                <p className="font-sans text-[0.7rem] tracking-[0.22em] text-kraft">
+                  {step.n}
+                </p>
+                <h3 className="mt-6 font-display text-2xl">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-fg-muted">{step.copy}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16">
+        <div className="site-wrap-wide">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="Industries"
+              title={
+                <>
+                  Built for the way
+                  <em> India ships.</em>
+                </>
+              }
+            />
+            <Link
+              to="/industries"
+              className="inline-flex items-center gap-2 text-sm font-medium tracking-tight"
+            >
+              All industries
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {INDUSTRIES.map((ind, i) => (
+              <Reveal key={ind.slug} delay={i * 50}>
+                <Link to="/industries" hash={ind.slug} className="group relative block overflow-hidden">
+                  <div className="img-zoom">
+                    <img
+                      src={ind.image}
+                      alt=""
+                      className="aspect-[4/5] w-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-fg">
+                    <h3 className="font-display text-2xl">{ind.name}</h3>
+                    <p className="mt-2 line-clamp-2 text-sm text-fg-muted">{ind.copy}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper-2 py-12 md:py-16">
+        <div className="site-wrap-wide">
+          <SectionHeading
+            eyebrow="Infrastructure"
+            title={
+              <>
+                Pithampur. Kanpur.
+                <em> North, Central, West.</em>
+              </>
+            }
+            lede="Two automatic plants placed against the consumption belts they serve, with an in-house fleet between the dock and the customer."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {PLANTS.map((plant, i) => (
+              <Reveal key={plant.id} delay={i * 70}>
+                <Link to="/plants" hash={plant.id} className="group block">
+                  <div className="img-zoom">
+                    <img
+                      src={plant.image}
+                      alt=""
+                      className="aspect-[16/10] w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-5 flex items-start justify-between gap-4">
+                    <div>
+                      <p className="eyebrow">{plant.serves}</p>
+                      <h3 className="mt-2 font-display text-3xl">{plant.name}</h3>
+                      <p className="mt-2 text-sm text-ink-muted">
+                        {plant.capacity} installed · {plant.area}
+                        {plant.expanding ? ` · expanding to ${plant.expanding}` : ""}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="size-5 text-ink-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <img
+          src="/images/flute.jpg"
+          alt=""
+          className="absolute inset-0 size-full object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/70" />
+        <div className="site-wrap-wide relative grid gap-8 py-14 text-fg md:grid-cols-2 md:py-20">
+          <Reveal>
+            <p className="eyebrow mb-5">Trusted by</p>
+            <h2 className="font-display text-title">
+              The brands that already
+              <em> move on Udaan board.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={80} className="flex flex-col justify-end">
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {CLIENTS.map((c) => (
+                <li
+                  key={c}
+                  className="border-t border-fg/15 pt-3 text-sm tracking-wide text-fg"
+                >
+                  {c}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm text-fg-muted">
+              And a growing book across food, textile and industrial accounts in
+              North, Central and West India.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-paper py-16">
+        <div className="site-wrap-wide flex flex-wrap items-end justify-between gap-6">
+          <p className="eyebrow">Certified systems</p>
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            {CERTS.map((c) => (
+              <div key={c.code}>
+                <p className="font-sans text-sm font-medium text-ink-fg">{c.code}</p>
+                <p className="text-xs text-ink-muted">{c.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand />
+    </main>
+  );
+}

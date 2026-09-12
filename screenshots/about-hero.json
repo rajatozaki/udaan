@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/about",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "About — Udaan Paper Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 2771,
+      "bodyTextHash": "56705c5d511d73cdd8d806d40e84881d3163eec7827d11d62cacb58062e2118e",
+      "bodyTextPrefix": "About Solutions Industries Plants Sustainability Contact Request",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about-hero.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "About — Udaan Paper Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 2698,
+      "bodyTextHash": "b2a7119afbbb4f3c8609894be4f44c9e6172399f8db667ca3e9ac90841c8bdc7",
+      "bodyTextPrefix": "ABOUT A packaging house, recast. Professionally managed. Growth-",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about-hero-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/about-hero.json"
+}

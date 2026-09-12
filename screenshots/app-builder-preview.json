@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Udaan Paper Industries — Engineered corrugated packaging",
+      "hasCanvas": false,
+      "bodyTextLen": 4960,
+      "bodyTextHash": "273f4186de7555bbe98ca7581c81728b1b2ba5eefc4cabe13b41a4a576220fb9",
+      "bodyTextPrefix": "About Solutions Industries Plants Sustainability Contact Request",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Udaan Paper Industries — Engineered corrugated packaging",
+      "hasCanvas": false,
+      "bodyTextLen": 4887,
+      "bodyTextHash": "1c06f93d9e15145d44cc7f041a70492d0879eee95e54dfb41247f43fd99c6d0a",
+      "bodyTextPrefix": "UDAAN PAPER INDUSTRIES Gain a new perspective in packaging. Full",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
