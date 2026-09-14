@@ -33,50 +33,116 @@ function Home() {
 
   return (
     <main>
-      <section className="relative flex min-h-[90svh] items-end overflow-hidden bg-slate-950 text-fg md:min-h-svh">
+      <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#050811] text-fg md:min-h-svh">
+        {/* Modern Layered Background */}
+        <div className="absolute inset-0 bg-[#050811]" />
         {reduceMotion ? (
           <img
-            src="/images/hero-line.jpg"
+            src="/images/real-corrugator.jpg"
             alt=""
-            className="hero-media absolute inset-0 size-full object-cover"
+            className="hero-media absolute inset-0 size-full object-cover opacity-30"
           />
         ) : (
           <video
-            className="hero-media absolute inset-0 size-full object-cover"
+            className="hero-media absolute inset-0 size-full object-cover opacity-35"
             autoPlay
             muted
             loop
             playsInline
-            poster="/images/hero-line.jpg"
+            poster="/images/real-corrugator.jpg"
           >
             <source src="/videos/hero-line.mp4" type="video/mp4" />
           </video>
         )}
+
+        {/* Modern Engineering Vector Grid Pattern */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+        {/* Ambient Glow Lights */}
+        <div className="pointer-events-none absolute -top-40 right-0 size-[36rem] rounded-full bg-amber-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-10 -left-20 size-[32rem] rounded-full bg-blue-600/10 blur-3xl" />
+
         <div className="hero-scrim absolute inset-0" />
         <div className="noise" />
-        <div className="hero-enter site-wrap-wide relative z-10 mb-12 w-full pb-12 pt-36 md:mb-16 md:pb-16 md:pt-48">
-          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
-            <span className="size-2 rounded-full bg-amber-400 animate-pulse" />
-            Udaan Paper Industries
-          </div>
-          <h1 className="max-w-4xl font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-            Built to hold.
-            <br />
-            <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent">
-              Made to move.
-            </span>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-            Corrugated packaging engineered at scale for the brands that feed,
-            clothe and move India.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button asChild size="lg" className="shadow-lg shadow-amber-500/20">
-              <Link to="/solutions">Explore solutions</Link>
-            </Button>
-            <Button variant="outline" size="lg" className="text-fg" onClick={() => setOpen(true)}>
-              Request a quote
-            </Button>
+
+        {/* Hero Content Container with comfortable padding and balanced grid */}
+        <div className="hero-enter site-wrap-wide relative z-10 mx-auto w-full py-32 md:py-44">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
+                <span className="size-2 rounded-full bg-amber-400 animate-pulse" />
+                Udaan Paper Industries
+              </div>
+              <h1 className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+                Built to hold.
+                <br />
+                <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 bg-clip-text text-transparent">
+                  Made to move.
+                </span>
+              </h1>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-300 md:text-xl">
+                Corrugated packaging engineered at scale for the brands that feed,
+                clothe and move India.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Button asChild size="lg" className="shadow-lg shadow-amber-500/20">
+                  <Link to="/solutions">Explore solutions</Link>
+                </Button>
+                <Button variant="outline" size="lg" className="text-fg" onClick={() => setOpen(true)}>
+                  Request a quote
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Column: Modern High-Tech Live Operations Monitor Card */}
+            <div className="hidden lg:block lg:col-span-5">
+              <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-amber-500/30">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="size-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-white">Live Operations</span>
+                  </div>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-semibold text-slate-300">
+                    2 Units Active
+                  </span>
+                </div>
+
+                <div className="mt-5 space-y-4">
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Unit I — Pithampur</span>
+                      <span className="text-xs font-bold text-amber-400">22,500 TPA</span>
+                    </div>
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                      <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-amber-500 to-amber-300" />
+                    </div>
+                    <p className="mt-1.5 text-[0.7rem] text-slate-400">Expanding toward 52,500 TPA · Central & West India</p>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Unit II — Kanpur</span>
+                      <span className="text-xs font-bold text-amber-400">7,500 TPA</span>
+                    </div>
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                      <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-amber-500 to-amber-300" />
+                    </div>
+                    <p className="mt-1.5 text-[0.7rem] text-slate-400">Commissioned 2024 · Serving North India</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3 text-center">
+                      <p className="font-display text-2xl font-bold text-white">26</p>
+                      <p className="text-[0.68rem] font-medium uppercase tracking-wider text-slate-400">Owned Trucks</p>
+                    </div>
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3 text-center">
+                      <p className="font-display text-2xl font-bold text-white">100%</p>
+                      <p className="text-[0.68rem] font-medium uppercase tracking-wider text-slate-400">Recyclable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
