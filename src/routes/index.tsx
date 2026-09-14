@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Layers, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Factory, Truck, Recycle, CheckCircle2 } from "lucide-react";
 import { CountUp } from "@/components/count-up";
 import { CtaBand } from "@/components/cta-band";
 import { ImageRail } from "@/components/image-rail";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { PaperFluteCanvas } from "@/components/paper-flute-canvas";
 import { useQuote } from "@/lib/quote";
 import {
   CERTS,
@@ -27,7 +26,6 @@ export const Route = createFileRoute("/")({ component: Home });
 function Home() {
   const { setOpen } = useQuote();
   const [reduceMotion, setReduceMotion] = useState(false);
-  const [activeFlute, setActiveFlute] = useState<"B" | "C" | "BC">("BC");
 
   useEffect(() => {
     setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -35,195 +33,136 @@ function Home() {
 
   return (
     <main>
-      {/* ART & CRAFT HERO SECTION */}
-      <section className="relative flex min-h-[94svh] items-center overflow-hidden bg-[#100c08] text-fg md:min-h-svh">
-        {/* Deep Tactile Kraft Fiber & Laid Paper Background */}
-        <div className="absolute inset-0 bg-radial-[ellipse_at_top,_#261c12_0%,_#100c08_70%,_#090604_100%]" />
-
-        {/* Tactile Kinetic Paper Flute Canvas */}
-        <PaperFluteCanvas className="absolute inset-0 size-full opacity-65 mix-blend-screen pointer-events-none" />
-
-        {/* Architectural Packaging Scoring & Registration Marks */}
-        <div className="pointer-events-none absolute inset-0 select-none">
-          {/* Corner Crosshairs */}
-          <div className="absolute top-8 left-8 text-amber-400/30 font-mono text-xs flex items-center gap-2">
-            <span>⌖</span>
-            <span className="hidden sm:inline tracking-widest text-[0.65rem] uppercase">REGISTRATION: 0.02mm · DIE-CUT SPEC</span>
-          </div>
-          <div className="absolute top-8 right-8 text-amber-400/30 font-mono text-xs flex items-center gap-2">
-            <span className="hidden sm:inline tracking-widest text-[0.65rem] uppercase">CALIPER TOLERANCE: ±0.05mm</span>
-            <span>⌖</span>
-          </div>
-          {/* Fine Technical Scoring Guide Lines */}
-          <div className="absolute inset-x-8 top-16 border-t border-dashed border-amber-400/10" />
-          <div className="absolute inset-x-8 bottom-16 border-b border-dashed border-amber-400/10" />
+      {/* AUTHENTIC INDUSTRIAL PAPER PACKAGING HERO */}
+      <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-slate-950 text-fg md:min-h-svh">
+        {/* Real Industrial Corrugator Plant Floor Photography */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="/images/plant-interior.jpg"
+            alt="Automatic high-speed corrugator plant floor at Udaan Paper Industries"
+            className="hero-media absolute inset-0 size-full object-cover object-center"
+          />
+          {/* Deep Cinematic Industrial Contrast Scrim */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-slate-950/90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/70" />
         </div>
-
-        {/* Tactile Paper Texture Scrim */}
-        <div className="hero-scrim absolute inset-0 bg-gradient-to-b from-[#100c08]/60 via-transparent to-[#100c08]/90" />
-        <div className="noise opacity-15" />
 
         {/* Hero Content Container */}
         <div className="hero-enter site-wrap-wide relative z-10 mx-auto w-full py-28 md:py-36">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             
-            {/* Left Column: Sculptural Clash Display Typography & Art Direction */}
+            {/* Left Column: Bold Industrial Headline & Value Proposition */}
             <div className="lg:col-span-7">
-              {/* Artisanal Packaging Studio Hallmark */}
-              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-amber-400/30 bg-[#241a12]/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-300 shadow-md backdrop-blur-md">
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
                 <span className="size-2 rounded-full bg-amber-400 animate-pulse" />
                 <span>Udaan Paper Industries · Est. 1986</span>
               </div>
 
-              {/* Sculptural Clash Display Headline */}
-              <h1 className="font-display text-5xl font-bold tracking-tight text-[#fdfbf7] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.98]">
+              <h1 className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02]">
                 Built to hold.
                 <br />
-                <span className="font-display italic font-light text-amber-300">
+                <span className="text-amber-400">
                   Made to move.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#dfd7c5] md:text-xl font-sans">
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-300 md:text-xl font-sans">
                 Corrugated packaging engineered at scale for the brands that feed,
                 clothe and move India.
               </p>
 
-              {/* High-Craft Action Controls */}
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-xl bg-amber-500 px-7 py-3.5 font-sans font-semibold text-slate-950 shadow-xl shadow-amber-950/50 transition-all duration-300 hover:bg-amber-400 hover:scale-105"
+                  className="rounded-xl bg-amber-500 px-7 py-3.5 font-sans font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition-all duration-300 hover:bg-amber-400"
                 >
                   <Link to="/solutions">Explore solutions</Link>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-xl border border-amber-300/30 bg-white/[0.04] px-7 py-3.5 font-sans font-semibold text-[#fdfbf7] backdrop-blur-md transition-all duration-300 hover:border-amber-400 hover:bg-white/[0.08]"
+                  className="rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 font-sans font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10"
                   onClick={() => setOpen(true)}
                 >
                   Request a quote
                 </Button>
               </div>
 
-              {/* Technical Papercraft Footnote */}
-              <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-amber-400/15 pt-6 text-xs text-[#b8a994] font-mono">
+              {/* Manufacturing Capabilities Strip */}
+              <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6 text-xs text-slate-400">
                 <span className="flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-amber-400" />
-                  3-Ply & 5-Ply Flute Engineering
+                  <Factory className="size-4 text-amber-400" />
+                  Automatic Corrugation Lines
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-amber-400" />
-                  In-House Testing Laboratory
+                  <CheckCircle2 className="size-4 text-amber-400" />
+                  In-House Quality Laboratory
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-amber-400" />
-                  100% Recyclable Virgin & Kraft Fibre
+                  <Truck className="size-4 text-amber-400" />
+                  26 Dedicated Fleet Trucks
                 </span>
               </div>
             </div>
 
-            {/* Right Column: Tactile Structural Packaging Craft Matrix (Replaces SaaS Widget) */}
+            {/* Right Column: Authentic Manufacturing Platforms Overview */}
             <div className="hidden lg:block lg:col-span-5">
-              <div className="relative overflow-hidden rounded-3xl border border-amber-400/25 bg-[#1b140e]/85 p-7 shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:border-amber-400/50">
-                {/* Physical Packaging Specimen Header */}
-                <div className="flex items-center justify-between border-b border-amber-400/15 pb-5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex size-7 items-center justify-center rounded-lg bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-mono">
-                      ⌖
-                    </div>
-                    <div>
-                      <p className="font-display text-sm font-bold tracking-wide text-white">Structural Fluting Specimen</p>
-                      <p className="text-[0.68rem] text-amber-400/80 font-mono tracking-wider uppercase">Caliper & Board Architecture</p>
-                    </div>
+              <div className="rounded-3xl border border-white/15 bg-slate-900/80 p-7 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-white">Production Footprint</p>
+                    <p className="text-[0.7rem] text-slate-400">Two Fully Automatic Plants</p>
                   </div>
-                  <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[0.7rem] font-semibold text-amber-300">
-                    Grade A+ Heavy
+                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold text-amber-400 border border-amber-500/30">
+                    30,000 TPA Installed
                   </span>
                 </div>
 
-                {/* Interactive Flute Architecture Selector */}
-                <div className="mt-6">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Select Board Configuration:</p>
-                  <div className="mt-2.5 grid grid-cols-3 gap-2">
-                    {(["B", "C", "BC"] as const).map((flute) => (
-                      <button
-                        key={flute}
-                        type="button"
-                        onClick={() => setActiveFlute(flute)}
-                        className={`cursor-pointer rounded-xl border p-2.5 text-center transition-all ${
-                          activeFlute === flute
-                            ? "border-amber-400 bg-amber-500/20 text-white shadow-md shadow-amber-500/10"
-                            : "border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-white"
-                        }`}
-                      >
-                        <p className="font-display text-sm font-bold">{flute}-Flute</p>
-                        <p className="text-[0.65rem] text-amber-300/80">
-                          {flute === "B" ? "3.0mm" : flute === "C" ? "4.0mm" : "7.0mm 5-Ply"}
-                        </p>
-                      </button>
-                    ))}
+                <div className="mt-5 space-y-4">
+                  {/* Unit I Card */}
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 transition-all hover:border-amber-500/30">
+                    <div className="flex items-center justify-between">
+                      <p className="font-display text-base font-bold text-white">Unit I — Pithampur</p>
+                      <span className="text-sm font-bold text-amber-400">22,500 TPA</span>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-300">
+                      Central & West India hub · Expanding toward <strong className="text-white">52,500 TPA</strong>
+                    </p>
+                    <p className="mt-1 text-[0.7rem] text-slate-400">
+                      High-speed automatic corrugation & converting
+                    </p>
                   </div>
 
-                  {/* Physical Fluting Profile Diagram */}
-                  <div className="mt-4 rounded-2xl border border-amber-400/15 bg-black/30 p-4">
-                    <div className="flex items-center justify-between text-xs text-slate-300">
-                      <span className="font-mono text-amber-300">
-                        {activeFlute === "B" && "B-Flute · 48 flutes/ft · High Crush Resistance"}
-                        {activeFlute === "C" && "C-Flute · 39 flutes/ft · Cushioning & Compression"}
-                        {activeFlute === "BC" && "BC Double Wall · 5-Ply · Heavy Export & Industrial"}
-                      </span>
+                  {/* Unit II Card */}
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 transition-all hover:border-amber-500/30">
+                    <div className="flex items-center justify-between">
+                      <p className="font-display text-base font-bold text-white">Unit II — Kanpur</p>
+                      <span className="text-sm font-bold text-amber-400">7,500 TPA</span>
                     </div>
-                    {/* SVG Diagram of Flute Waves */}
-                    <div className="mt-3 flex items-center justify-center py-2">
-                      <svg className="w-full h-8 text-amber-400" viewBox="0 0 300 32" fill="none" stroke="currentColor">
-                        {/* Top linerboard */}
-                        <line x1="0" y1="2" x2="300" y2="2" strokeWidth="2.5" stroke="rgba(245, 158, 11, 0.9)" />
-                        {/* Fluting Sine Wave */}
-                        {activeFlute === "BC" ? (
-                          <>
-                            <path d="M0,16 Q10,4 20,16 T40,16 T60,16 T80,16 T100,16 T120,16 T140,16 T160,16 T180,16 T200,16 T220,16 T240,16 T260,16 T280,16 T300,16" strokeWidth="2" stroke="rgba(251, 191, 36, 0.8)" fill="none" />
-                            <line x1="0" y1="16" x2="300" y2="16" strokeWidth="1.5" stroke="rgba(245, 158, 11, 0.6)" />
-                            <path d="M0,30 Q15,16 30,30 T60,30 T90,30 T120,30 T150,30 T180,30 T210,30 T240,30 T270,30 T300,30" strokeWidth="2" stroke="rgba(251, 191, 36, 0.8)" fill="none" />
-                          </>
-                        ) : (
-                          <path d="M0,30 Q12,2 24,30 T48,30 T72,30 T96,30 T120,30 T144,30 T168,30 T192,30 T216,30 T240,30 T264,30 T288,30 T312,30" strokeWidth="2.5" stroke="rgba(251, 191, 36, 0.85)" fill="none" />
-                        )}
-                        {/* Bottom linerboard */}
-                        <line x1="0" y1="30" x2="300" y2="30" strokeWidth="2.5" stroke="rgba(245, 158, 11, 0.9)" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Authentic Plant Capabilities (Strictly Preserved) */}
-                <div className="mt-5 space-y-3 pt-3 border-t border-amber-400/15">
-                  <div className="flex items-center justify-between rounded-xl bg-white/[0.02] p-3 border border-white/5">
-                    <div>
-                      <p className="text-xs font-bold text-white">Unit I — Pithampur</p>
-                      <p className="text-[0.68rem] text-slate-400">Expanding toward 52,500 TPA · Central & West India</p>
-                    </div>
-                    <span className="font-display font-bold text-amber-400 text-sm">22,500 TPA</span>
+                    <p className="mt-1 text-xs text-slate-300">
+                      Commissioned 2024 · Serving the Northern consumer & industrial belt
+                    </p>
+                    <p className="mt-1 text-[0.7rem] text-slate-400">
+                      Precision die-cutting & multi-color flexo
+                    </p>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl bg-white/[0.02] p-3 border border-white/5">
-                    <div>
-                      <p className="text-xs font-bold text-white">Unit II — Kanpur</p>
-                      <p className="text-[0.68rem] text-slate-400">Commissioned 2024 · Serving North India</p>
-                    </div>
-                    <span className="font-display font-bold text-amber-400 text-sm">7,500 TPA</span>
-                  </div>
-
+                  {/* Logistics & Sustainability Grid */}
                   <div className="grid grid-cols-2 gap-3 pt-1">
-                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5 text-center">
-                      <p className="font-display text-xl font-bold text-white">26</p>
-                      <p className="text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">Owned Trucks</p>
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 text-center">
+                      <p className="font-display text-2xl font-bold text-white">26</p>
+                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-slate-400">
+                        Owned Trucks
+                      </p>
+                      <p className="text-[0.65rem] text-slate-400">Direct dock delivery</p>
                     </div>
-                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5 text-center">
-                      <p className="font-display text-xl font-bold text-amber-400">100%</p>
-                      <p className="text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">Recyclable</p>
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 text-center">
+                      <p className="font-display text-2xl font-bold text-emerald-400">100%</p>
+                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-slate-400">
+                        Recyclable
+                      </p>
+                      <p className="text-[0.65rem] text-slate-400">Sustainable kraft board</p>
                     </div>
                   </div>
                 </div>
