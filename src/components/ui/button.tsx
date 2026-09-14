@@ -9,8 +9,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 shadow-sm hover:from-amber-400 hover:to-amber-300 hover:shadow-lg hover:shadow-amber-500/25 border border-amber-400/50",
-        ink: "bg-slate-900 text-white border border-slate-700/80 hover:bg-slate-800 shadow-sm",
+          "bg-gradient-to-r from-amber-500 to-amber-400 text-[#1a110a] shadow-sm hover:from-amber-400 hover:to-amber-300 hover:shadow-lg hover:shadow-amber-500/25 border border-amber-400/50",
+        ink: "bg-[#1c120c] text-[#fbf8f2] border border-amber-900/40 hover:bg-[#271b12] shadow-sm",
         outline:
           "border border-white/20 bg-white/5 backdrop-blur-md text-fg hover:bg-white/10 hover:border-white/40",
         ghost: "bg-transparent text-inherit hover:text-amber-400 hover:bg-white/5",

@@ -315,13 +315,13 @@ function Home() {
               lede="Udaan Paper Industries Limited is a corrugated packaging manufacturer with fully automatic production at Pithampur, Madhya Pradesh and Kanpur, Uttar Pradesh — close to the FMCG, food and textile clusters we serve."
             />
             <Reveal delay={80}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-[#5c4a3e]">
                 From board design to the dock, the process stays in-house: corrugation,
                 conversion, quality testing and delivery on our own fleet.
               </p>
               <Link
                 to="/about"
-                className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
+                className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-[#221610] shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
               >
                 Read the story
                 <ArrowUpRight className="size-4 text-amber-600" />
@@ -350,7 +350,7 @@ function Home() {
             />
             <Link
               to="/about"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-[#221610] shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
             >
               Meet the promoters
               <ArrowUpRight className="size-4 text-amber-600" />
@@ -371,7 +371,7 @@ function Home() {
                     />
                   </div>
                   <div className="p-4 pt-5">
-                    <p className="font-display text-2xl font-bold tracking-tight text-slate-950">{person.name}</p>
+                    <p className="font-display text-2xl font-bold tracking-tight text-[#221610]">{person.name}</p>
                     <p className="mt-1 text-sm font-medium text-amber-600">{person.role}</p>
                   </div>
                 </Link>
@@ -410,17 +410,17 @@ function Home() {
                   </div>
                   <div className="flex flex-1 items-start justify-between gap-4 p-8">
                     <div>
-                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
+                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
                         {product.kicker}
                       </span>
-                      <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-slate-950 md:text-3xl">
+                      <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-[#221610] md:text-3xl">
                         {product.name}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                      <p className="mt-3 text-sm leading-relaxed text-[#6b584c]">
                         {product.summary}
                       </p>
                     </div>
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 transition-all group-hover:border-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-amber-900/20 bg-amber-50/50 text-amber-800 transition-all group-hover:border-amber-500 group-hover:bg-amber-500 group-hover:text-[#18110a]">
                       <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
@@ -478,35 +478,38 @@ function Home() {
             />
             <Link
               to="/industries"
-              className="inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
+              className="inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-[#221610] shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
             >
-              All industries
+              See all categories
               <ArrowUpRight className="size-4 text-amber-600" />
             </Link>
           </div>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-12">
-            {INDUSTRIES.map((ind, i) => (
-              <Reveal
-                key={ind.slug}
-                delay={i * 50}
-                className={i === INDUSTRIES.length - 1 ? "lg:col-span-6" : "lg:col-span-3"}
-              >
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {INDUSTRIES.slice(0, 6).map((ind, i) => (
+              <Reveal key={ind.slug} delay={i * 40}>
                 <Link
                   to="/industries"
                   hash={ind.slug}
-                  className="group relative block h-full min-h-[280px] overflow-hidden rounded-3xl border border-amber-900/15 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-xl"
+                  className="group relative block h-full min-h-[280px] overflow-hidden rounded-3xl border border-amber-900/15 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
-                  <div className="h-full overflow-hidden">
+                  <div className="img-zoom absolute inset-0 size-full">
                     <img
                       src={ind.image}
                       alt=""
-                      className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/90 via-[#1a110a]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1c120c]/95 via-[#1c120c]/40 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <h3 className="font-display text-2xl font-bold tracking-tight">{ind.name}</h3>
-                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#dfd0c0]">{ind.copy}</p>
+                    <span className="inline-block rounded-full bg-amber-400/20 px-2.5 py-0.5 font-sans text-xs font-bold tracking-widest text-amber-400 backdrop-blur-md border border-amber-400/30">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-2 font-display text-xl font-bold tracking-tight text-[#fbf8f2]">
+                      {ind.name}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-[#dfd0c0]">
+                      {ind.copy}
+                    </p>
                   </div>
                 </Link>
               </Reveal>
@@ -515,17 +518,17 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading
-            eyebrow="Infrastructure"
+            eyebrow="The footprint"
             title={
               <>
-                Pithampur. Kanpur.
-                <em> North, Central, West.</em>
+                Two plants. Central and North.
+                <em> Built to expand.</em>
               </>
             }
-            lede="Two automatic plants placed against the consumption belts they serve, with an in-house fleet between the dock and the customer."
+            lede="Pithampur (Indore corridor) and Kanpur (UP freight hub) give Udaan overnight and same-day access to major consumption belts."
           />
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {PLANTS.map((plant, i) => (
@@ -544,17 +547,17 @@ function Home() {
                   </div>
                   <div className="p-8">
                     <div className="flex items-center justify-between gap-4">
-                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
+                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
                         {plant.serves}
                       </span>
-                      <div className="flex size-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 transition-all group-hover:border-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950">
+                      <div className="flex size-9 items-center justify-center rounded-xl border border-amber-900/20 bg-amber-50/50 text-amber-800 transition-all group-hover:border-amber-500 group-hover:bg-amber-500 group-hover:text-[#18110a]">
                         <ArrowUpRight className="size-4.5" />
                       </div>
                     </div>
-                    <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-slate-950 md:text-3xl">
+                    <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-[#221610] md:text-3xl">
                       {plant.name}
                     </h3>
-                    <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+                    <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-[#5c4a3e]">
                       <span className="rounded-lg bg-white px-2.5 py-1 border border-amber-900/15">
                         {plant.capacity} installed
                       </span>
@@ -617,10 +620,10 @@ function Home() {
         <div className="site-wrap-wide grid gap-8 md:grid-cols-12 md:items-center">
           <div className="md:col-span-3">
             <div className="flex items-center gap-2">
-              <span className="size-2 rounded-full bg-amber-500" />
-              <p className="eyebrow text-xs text-amber-600">Certified systems</p>
+              <span className="size-2 rounded-full bg-amber-600" />
+              <p className="eyebrow text-xs text-amber-700">Certified systems</p>
             </div>
-            <p className="mt-2 text-sm font-medium text-slate-500">Global standards & audits</p>
+            <p className="mt-2 text-sm font-medium text-[#6b584c]">Global standards & audits</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 md:col-span-9 lg:grid-cols-5">
             {CERTS.map((c) => (
@@ -628,8 +631,8 @@ function Home() {
                 key={c.code}
                 className="rounded-2xl border border-amber-900/15 bg-white/80 p-4 shadow-xs transition-all hover:border-amber-500/50 hover:bg-white hover:shadow-md"
               >
-                <p className="font-sans text-sm font-bold text-slate-950">{c.code}</p>
-                <p className="mt-1 text-xs text-slate-500">{c.name}</p>
+                <p className="font-sans text-sm font-bold text-[#221610]">{c.code}</p>
+                <p className="mt-1 text-xs text-[#6b584c]">{c.name}</p>
               </div>
             ))}
           </div>

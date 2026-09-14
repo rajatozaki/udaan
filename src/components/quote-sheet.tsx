@@ -40,34 +40,34 @@ export function QuoteSheet() {
         type="button"
         aria-label="Close quote form"
         className={cn(
-          "absolute inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity duration-300",
+          "absolute inset-0 bg-[#18110a]/80 backdrop-blur-sm transition-opacity duration-300",
           entered ? "opacity-100" : "opacity-0",
         )}
         onClick={close}
       />
       <aside
         className={cn(
-          "absolute inset-y-0 right-0 flex w-full max-w-lg flex-col border-l border-white/10 bg-slate-950 text-fg shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "absolute inset-y-0 right-0 flex w-full max-w-lg flex-col border-l border-amber-900/30 bg-[#1c120c] text-[#fbf8f2] shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           entered ? "translate-x-0" : "translate-x-full",
         )}
         role="dialog"
         aria-modal="true"
         aria-labelledby="quote-title"
       >
-        <div className="flex items-center justify-between border-b border-white/10 px-8 py-6">
+        <div className="flex items-center justify-between border-b border-amber-900/25 px-8 py-6">
           <div>
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-full bg-amber-400" />
               <p className="eyebrow text-xs tracking-widest text-amber-400">Specification</p>
             </div>
-            <h2 id="quote-title" className="mt-1 font-display text-2xl font-bold text-white">
+            <h2 id="quote-title" className="mt-1 font-display text-2xl font-bold text-[#fbf8f2]">
               Request a quote
             </h2>
           </div>
           <button
             type="button"
             onClick={close}
-            className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+            className="flex size-10 items-center justify-center rounded-xl border border-amber-900/30 bg-white/5 text-[#dfd0c0] transition-colors hover:bg-white/10 hover:text-[#fbf8f2]"
             aria-label="Close"
           >
             <X className="size-5" />
@@ -81,10 +81,10 @@ export function QuoteSheet() {
                 ✓
               </div>
               <p className="eyebrow text-amber-400">Received</p>
-              <h3 className="mt-2 font-display text-2xl font-bold text-white">
+              <h3 className="mt-2 font-display text-2xl font-bold text-[#fbf8f2]">
                 We’ll come back with a specification.
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+              <p className="mt-3 text-sm leading-relaxed text-[#dfd0c0]">
                 A member of the Udaan team will reach you at the details you left.
                 For something urgent, call {SITE.phone}.
               </p>
@@ -101,33 +101,33 @@ export function QuoteSheet() {
                 <Field label="Phone" name="phone" type="tel" required />
               </div>
               <label className="block">
-                <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-[#dfd0c0]">
                   Industry
                 </span>
                 <select
                   name="industry"
-                  className="field-input border-white/15 bg-slate-900 text-white"
+                  className="field-input border-amber-900/30 bg-[#251a12] text-[#fbf8f2] focus:border-amber-500"
                   defaultValue=""
                 >
-                  <option value="" disabled className="bg-slate-900 text-slate-400">
+                  <option value="" disabled className="bg-[#251a12] text-[#dfd0c0]">
                     Select
                   </option>
                   {INDUSTRIES.map((ind) => (
-                    <option key={ind.slug} value={ind.name} className="bg-slate-900 text-white">
+                    <option key={ind.slug} value={ind.name} className="bg-[#251a12] text-[#fbf8f2]">
                       {ind.name}
                     </option>
                   ))}
                 </select>
               </label>
               <label className="block">
-                <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-[#dfd0c0]">
                   What do you need?
                 </span>
                 <textarea
                   name="message"
                   required
                   rows={4}
-                  className="field-input border-white/15 bg-slate-900 text-white"
+                  className="field-input border-amber-900/30 bg-[#251a12] text-[#fbf8f2] focus:border-amber-500"
                 />
               </label>
               <Button variant="primary" size="lg" type="submit" className="mt-2">
@@ -154,14 +154,14 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-[#dfd0c0]">
         {label}
       </span>
       <input
         name={name}
         type={type}
         required={required}
-        className="field-input border-white/15 bg-slate-900 text-white"
+        className="field-input border-amber-900/30 bg-[#251a12] text-[#fbf8f2] focus:border-amber-500"
       />
     </label>
   );

@@ -8,11 +8,11 @@ export function SiteFooter() {
   const { setOpen } = useQuote();
 
   return (
-    <footer className="border-t border-white/10 bg-slate-950 text-fg">
+    <footer className="border-t border-amber-900/20 bg-[#18110a] text-[#fbf8f2]">
       <div className="site-wrap-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
           <Logo onDark size="lg" />
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-400">
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#d8c5b4]">
             Corrugated boxes, sheets and rolls from two automatic plants —
             designed, qualified and delivered on our own fleet.
           </p>
@@ -20,7 +20,7 @@ export function SiteFooter() {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="inline-flex items-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 font-sans text-sm font-semibold text-amber-400 transition-all hover:border-amber-400 hover:bg-amber-500/20"
+              className="inline-flex items-center gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 font-sans text-sm font-semibold text-amber-400 transition-all hover:border-amber-400 hover:bg-amber-500/20 shadow-xs"
             >
               Start a specification
               <ArrowUpRight className="size-4" />
@@ -35,7 +35,7 @@ export function SiteFooter() {
               <li key={item.to}>
                 <Link
                   to={item.to}
-                  className="inline-block text-sm text-slate-400 transition-colors hover:text-white"
+                  className="inline-block text-sm text-[#d8c5b4] transition-colors hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -48,7 +48,7 @@ export function SiteFooter() {
           {PLANTS.map((plant) => (
             <div
               key={plant.id}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition-all hover:border-white/20"
+              className="rounded-2xl border border-amber-900/30 bg-[#251a12]/90 p-5 backdrop-blur-sm transition-all hover:border-amber-500/40 hover:bg-[#2c1f17]"
             >
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-amber-400" />
@@ -57,14 +57,14 @@ export function SiteFooter() {
               <p className="mt-2 font-display text-lg font-semibold text-white">
                 {plant.name.replace("Unit I — ", "").replace("Unit II — ", "")}
               </p>
-              <p className="mt-2 text-xs leading-relaxed text-slate-400">{plant.address}</p>
+              <p className="mt-2 text-xs leading-relaxed text-[#d8c5b4]">{plant.address}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-6">
-        <div className="site-wrap-wide flex flex-col gap-4 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-amber-900/20 py-6">
+        <div className="site-wrap-wide flex flex-col gap-4 text-xs text-[#bda897] sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {SITE.legal}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a href={SITE.phoneHref} className="transition-colors hover:text-white">

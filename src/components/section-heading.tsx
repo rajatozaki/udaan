@@ -26,7 +26,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl",
-          onDark ? "text-white" : "text-slate-950",
+          onDark ? "text-[#fbf8f2]" : "text-[#221610]",
         )}
       >
         {title}
@@ -35,7 +35,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mt-4 max-w-2xl text-base leading-relaxed sm:text-lg",
-            onDark ? "text-slate-300" : "text-slate-600",
+            onDark ? "text-[#dfd0c0]" : "text-[#5c4a3e]",
           )}
         >
           {lede}

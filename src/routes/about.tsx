@@ -27,9 +27,43 @@ function AboutPage() {
         }
         lede="Professionally managed. Growth-oriented. Two automatic plants, a working laboratory, and a fleet that belongs to us."
         image="/images/real-corrugator.jpg"
+        easterEgg={
+          /* EASTER EGG: The 1986 Origami Flight & Tree Rings */
+          <svg
+            viewBox="0 0 900 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute -top-10 left-10 size-[42rem] opacity-[0.16] pointer-events-none"
+          >
+            {/* Concentric botanical tree growth rings (paper fiber heritage) */}
+            <circle cx="380" cy="280" r="80" stroke="#b45309" strokeWidth="0.8" strokeDasharray="3 4" />
+            <circle cx="380" cy="280" r="140" stroke="#d97706" strokeWidth="1" />
+            <circle cx="380" cy="280" r="200" stroke="#b45309" strokeWidth="0.8" strokeDasharray="6 8" />
+            <circle cx="380" cy="280" r="260" stroke="#d97706" strokeWidth="0.75" />
+
+            {/* Geometric Origami Paper Bird in Flight ("Udaan") */}
+            <g transform="translate(260, 160) scale(1.1)">
+              {/* Origami facets */}
+              <polygon points="120,40 180,110 90,110" fill="#d97706" fillOpacity="0.25" stroke="#b45309" strokeWidth="1.2" />
+              <polygon points="180,110 240,60 180,40" fill="#f59e0b" fillOpacity="0.2" stroke="#b45309" strokeWidth="1" />
+              <polygon points="90,110 30,80 70,140" fill="#b45309" fillOpacity="0.2" stroke="#b45309" strokeWidth="1" />
+              <polygon points="120,40 90,110 140,160" fill="#d97706" fillOpacity="0.3" stroke="#b45309" strokeWidth="1.2" />
+              <polygon points="140,160 180,110 120,40" fill="#f59e0b" fillOpacity="0.35" stroke="#b45309" strokeWidth="1.2" />
+              <polygon points="140,160 130,220 160,180" fill="#b45309" fillOpacity="0.25" stroke="#b45309" strokeWidth="1" />
+            </g>
+
+            {/* Heritage Foundation Seal */}
+            <g transform="translate(180, 420)">
+              <circle cx="60" cy="20" r="45" stroke="#b45309" strokeWidth="1.2" strokeDasharray="4 4" />
+              <circle cx="60" cy="20" r="41" stroke="#d97706" strokeWidth="0.6" />
+              <text x="60" y="16" textAnchor="middle" fill="#b45309" fontSize="10" fontWeight="bold" letterSpacing="1.5">EST. 1986</text>
+              <text x="60" y="28" textAnchor="middle" fill="#78350f" fontSize="7" fontWeight="bold" letterSpacing="1">HERITAGE</text>
+            </g>
+          </svg>
+        }
       />
 
-      <ImageRail images={GALLERY} className="bg-ink" />
+      <ImageRail images={GALLERY} className="bg-paper-2" />
 
       <section className="bg-paper py-20 md:py-28">
         <div className="site-wrap-wide">
@@ -54,18 +88,18 @@ function AboutPage() {
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-[3/4] items-end bg-slate-950 p-8 text-fg">
+                  <div className="flex aspect-[3/4] items-end bg-[#241911] p-8 text-white">
                     <p className="font-display text-7xl font-bold text-amber-400">SJ</p>
                   </div>
                 )}
                 <div className="p-6">
-                  <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
+                  <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
                     {person.role}
                   </span>
-                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-slate-950">
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-[#221610]">
                     {person.name}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{person.copy}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#5c4a3e]">{person.copy}</p>
                 </div>
               </Reveal>
             ))}
@@ -73,7 +107,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-slate-950 text-fg">
+      <section className="relative overflow-hidden bg-[#1c120c] text-[#fbf8f2]">
         <div className="grid md:grid-cols-2">
           <img
             src="/images/people/promoters.jpg"
@@ -90,7 +124,7 @@ function AboutPage() {
               <br />
               <span className="text-amber-400">and Sapan Bakliwal.</span>
             </h2>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-[#d8c5b4] sm:text-lg">
               Managing Director and Whole-time Director & CFO. Civil engineers who
               learned corrugated on the floor, then bought the company and built the
               second plant.
@@ -116,7 +150,7 @@ function AboutPage() {
               title="From a 1986 incorporation to a corrugated platform."
               lede="The current promoters acquired the business between FY 2020 and 2022 and turned it toward packaging."
             />
-            <Reveal className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
+            <Reveal className="mt-6 space-y-4 text-base leading-relaxed text-[#5c4a3e]">
               <p>
                 Manufacturing began at Pithampur in FY 2021–22. Kanpur followed in
                 2024. In January 2025 the company converted to a public limited
@@ -126,7 +160,7 @@ function AboutPage() {
             </Reveal>
             <div className="mt-8 space-y-3">
               {STRENGTHS.map((s) => (
-                <div key={s} className="flex items-center gap-3 rounded-xl border border-amber-900/15 bg-white p-3.5 text-sm font-medium text-slate-800 shadow-xs">
+                <div key={s} className="flex items-center gap-3 rounded-xl border border-amber-900/15 bg-white p-3.5 text-sm font-medium text-[#382618] shadow-xs">
                   <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
                     ✓
                   </span>
@@ -148,10 +182,10 @@ function AboutPage() {
                 delay={i * 20}
                 className="rounded-2xl border border-amber-900/15 bg-white/80 p-6 transition-all duration-300 hover:border-amber-500/50 hover:bg-white hover:shadow-md"
               >
-                <span className="inline-block rounded-lg bg-amber-100 px-3 py-1 font-sans text-xs font-bold text-amber-800">
+                <span className="inline-block rounded-lg bg-amber-100 px-3 py-1 font-sans text-xs font-bold text-amber-900 border border-amber-900/15">
                   {item.year}
                 </span>
-                <p className="mt-4 text-sm leading-relaxed text-slate-700 font-medium">
+                <p className="mt-4 text-sm leading-relaxed text-[#5c4a3e] font-medium">
                   {item.copy}
                 </p>
               </Reveal>
