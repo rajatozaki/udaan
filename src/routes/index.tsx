@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { CountUp } from "@/components/count-up";
@@ -19,7 +20,6 @@ import {
   PRODUCTS,
   STATS,
 } from "@/lib/site";
-import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -32,7 +32,7 @@ function Home() {
   }, []);
 
   return (
-    <main>
+    <main className="home-editorial">
       <section className="relative flex min-h-[88svh] items-end overflow-hidden bg-ink text-fg md:min-h-svh">
         {reduceMotion ? (
           <img
@@ -54,17 +54,17 @@ function Home() {
         )}
         <div className="hero-scrim absolute inset-0" />
         <div className="noise" />
-        <div className="hero-enter site-wrap-wide relative z-10 w-full pb-14 pt-32 md:pb-20">
+        <div className="hero-enter site-wrap-wide home-hero-copy relative z-10 mb-8 w-full pb-10 pt-32 md:mb-12 md:pb-14">
           <div className="mb-8 flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-fg-muted">
             <span className="h-px w-10 bg-gold" />
             Udaan Paper Industries
           </div>
-          <h1 className="max-w-6xl font-display text-display leading-[0.98]">
+          <h1 className="home-hero-title font-display">
             Built to hold.
             <br />
             <span className="text-gold">Made to move.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lede text-fg-muted md:text-xl">
+          <p className="mt-8 max-w-xl text-lede text-fg-muted md:text-xl">
             Corrugated packaging engineered at scale for the brands that feed,
             clothe and move India.
           </p>
@@ -97,9 +97,9 @@ function Home() {
         </div>
       </div>
 
-      <section className="dramatic-grid bg-paper py-16 md:py-24">
+      <section className="editorial-grid bg-paper py-16 md:pb-28 md:pt-24">
         <div className="site-wrap-wide grid items-center gap-10 md:grid-cols-12 md:gap-14">
-          <div className="dramatic-rule pt-7 md:col-span-5">
+          <div className="editorial-rule md:col-span-5">
             <SectionHeading
               eyebrow="The company"
                 title={
@@ -124,7 +124,7 @@ function Home() {
               </Link>
             </Reveal>
           </div>
-          <Reveal variant="image" className="image-frame md:col-span-7" delay={100}>
+          <Reveal variant="image" className="editorial-image-offset editorial-image image-frame md:col-span-7" delay={100}>
             <img
               src="/images/real-warehouse.jpg"
               alt="Kraft boxes staged in the Pithampur warehouse"
@@ -137,7 +137,7 @@ function Home() {
       <section className="border-y border-line bg-ink">
         <div className="site-wrap-wide grid grid-cols-2 gap-px bg-line md:grid-cols-4">
           {STATS.map((stat) => (
-            <div key={stat.label} className="group bg-ink px-5 py-10 transition-colors duration-500 hover:bg-ink-2 md:px-8 md:py-14">
+            <div key={stat.label} className="group flex min-h-40 flex-col justify-between bg-ink px-5 py-8 transition-colors duration-300 hover:bg-ink-2 md:min-h-52 md:px-8 md:py-10">
               <p className="font-display text-4xl text-fg md:text-6xl">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </p>
@@ -150,8 +150,8 @@ function Home() {
       </section>
 
       <section className="bg-paper py-16 md:py-24">
-        <div className="site-wrap-wide grid items-end gap-8 md:grid-cols-12">
-          <div className="md:col-span-4">
+        <div className="site-wrap-wide grid items-start gap-10 md:grid-cols-12 md:gap-14">
+          <div className="editorial-rule md:sticky md:top-28 md:col-span-4">
             <SectionHeading
               eyebrow="The board"
               title="The people who run the plants."
@@ -159,7 +159,7 @@ function Home() {
             />
             <Link
               to="/about"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-tight"
+                className="editorial-link mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-tight"
             >
               Meet the promoters
               <ArrowUpRight className="size-4" />
@@ -169,14 +169,14 @@ function Home() {
             {LEADERSHIP.filter((p) => p.image).map((person, i) => (
               <Reveal key={person.name} delay={i * 60}>
                 <Link to="/about" className="group block">
-                  <div className="image-frame">
+                  <div className="editorial-image image-frame">
                     <img
                       src={person.image!}
                       alt={person.name}
                       className="aspect-[4/5] w-full object-cover object-top"
                     />
                   </div>
-                  <p className="mt-3 font-display text-xl">{person.name}</p>
+                  <p className="mt-4 border-t border-line-paper pt-3 font-display text-2xl">{person.name}</p>
                   <p className="mt-1 text-sm text-ink-muted">{person.role}</p>
                 </Link>
               </Reveal>
@@ -197,22 +197,22 @@ function Home() {
             }
             lede="Boxes, printed cartons, sheets, rolls and engineered structures — produced on automatic lines, qualified in our laboratory."
           />
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid items-stretch gap-5 md:grid-cols-2">
             {PRODUCTS.map((product, i) => (
-              <Reveal key={product.slug} delay={i * 60}>
+              <Reveal key={product.slug} delay={i * 60} className="h-full">
                 <Link
                   to="/solutions"
                   hash={product.slug}
-                  className="group block bg-paper transition-transform duration-500 hover:-translate-y-1"
+                  className="editorial-card group flex h-full flex-col bg-paper"
                 >
-                  <div className="image-frame">
+                  <div className="editorial-image image-frame">
                     <img
                       src={product.image}
                       alt=""
                       className="aspect-[16/10] w-full object-cover"
                     />
                   </div>
-                  <div className="flex items-start justify-between gap-4 border-x border-b border-line-paper p-6 md:p-8">
+                  <div className="flex flex-1 items-start justify-between gap-4 p-6 md:p-8">
                     <div>
                       <p className="eyebrow">{product.kicker}</p>
                       <h3 className="mt-3 font-display text-3xl">{product.name}</h3>
@@ -229,7 +229,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-ink py-12 text-fg md:py-16">
+      <section className="bg-ink py-16 text-fg md:py-24">
         <div className="site-wrap-wide">
           <SectionHeading
             onDark
@@ -242,17 +242,17 @@ function Home() {
             }
             lede="Five steps, none of them outsourced. The same team that designs the pack qualifies it and puts it on a truck."
           />
-          <div className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
             {PROCESS.map((step, i) => (
               <Reveal
                 key={step.n}
                 delay={i * 50}
-                className="bg-ink px-5 py-8 md:px-6 md:py-10"
+                className="flex min-h-64 flex-col bg-ink px-5 py-8 transition-colors duration-300 hover:bg-ink-2 md:px-6 md:py-10"
               >
                 <p className="font-sans text-[0.7rem] tracking-[0.22em] text-kraft">
                   {step.n}
                 </p>
-                <h3 className="mt-6 font-display text-2xl">{step.title}</h3>
+                <h3 className="mt-auto pt-10 font-display text-2xl">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-fg-muted">{step.copy}</p>
               </Reveal>
             ))}
@@ -260,7 +260,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
+      <section className="bg-paper py-16 md:py-24">
         <div className="site-wrap-wide">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
@@ -274,21 +274,21 @@ function Home() {
             />
             <Link
               to="/industries"
-              className="inline-flex items-center gap-2 text-sm font-medium tracking-tight"
+              className="editorial-link inline-flex items-center gap-2 text-sm font-medium tracking-tight"
             >
               All industries
               <ArrowUpRight className="size-4" />
             </Link>
           </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-12">
             {INDUSTRIES.map((ind, i) => (
-              <Reveal key={ind.slug} delay={i * 50}>
-                <Link to="/industries" hash={ind.slug} className="group relative block overflow-hidden">
-                  <div className="img-zoom">
+              <Reveal key={ind.slug} delay={i * 50} className={i === INDUSTRIES.length - 1 ? "lg:col-span-6" : "lg:col-span-3"}>
+                <Link to="/industries" hash={ind.slug} className="group relative block h-full overflow-hidden">
+                  <div className="editorial-image h-full overflow-hidden">
                     <img
                       src={ind.image}
                       alt=""
-                      className="aspect-[4/5] w-full object-cover"
+                      className="aspect-[4/5] h-full w-full object-cover"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
@@ -303,7 +303,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper-2 py-12 md:py-16">
+      <section className="bg-paper-2 py-16 md:py-24">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="Infrastructure"
@@ -315,11 +315,11 @@ function Home() {
             }
             lede="Two automatic plants placed against the consumption belts they serve, with an in-house fleet between the dock and the customer."
           />
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
             {PLANTS.map((plant, i) => (
               <Reveal key={plant.id} delay={i * 70}>
-                <Link to="/plants" hash={plant.id} className="group block">
-                  <div className="img-zoom">
+                <Link to="/plants" hash={plant.id} className="group block border-t border-ink-fg pt-4">
+                  <div className="editorial-image overflow-hidden">
                     <img
                       src={plant.image}
                       alt=""
@@ -351,15 +351,15 @@ function Home() {
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-ink/70" />
-        <div className="site-wrap-wide relative grid gap-8 py-14 text-fg md:grid-cols-2 md:py-20">
-          <Reveal>
+        <div className="site-wrap-wide relative grid gap-10 py-16 text-fg md:grid-cols-12 md:py-24">
+          <Reveal className="md:col-span-5">
             <p className="eyebrow mb-5">Trusted by</p>
             <h2 className="font-display text-title">
               The brands that already
               <em> move on Udaan board.</em>
             </h2>
           </Reveal>
-          <Reveal delay={80} className="flex flex-col justify-end">
+          <Reveal delay={80} className="flex flex-col justify-end md:col-span-7">
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {CLIENTS.map((c) => (
                 <li
@@ -378,10 +378,10 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-16">
-        <div className="site-wrap-wide flex flex-wrap items-end justify-between gap-6">
-          <p className="eyebrow">Certified systems</p>
-          <div className="flex flex-wrap gap-x-8 gap-y-3">
+      <section className="bg-paper py-16 md:py-20">
+        <div className="site-wrap-wide grid gap-8 border-y border-line-paper py-8 md:grid-cols-12 md:items-start">
+          <p className="eyebrow md:col-span-3">Certified systems</p>
+          <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 md:col-span-9 lg:grid-cols-5">
             {CERTS.map((c) => (
               <div key={c.code}>
                 <p className="font-sans text-sm font-medium text-ink-fg">{c.code}</p>
