@@ -35,11 +35,134 @@ function Home() {
     <main>
       {/* AUTHENTIC WARM CRAFT PAPER PACKAGING HERO */}
       <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#faf6ee] text-[#221610] md:min-h-svh border-b border-amber-900/10">
-        {/* Warm Ambient Craft & Sunlit Atmospheric Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[42rem] rounded-full bg-amber-500/10 blur-3xl" />
-          <div className="absolute top-1/4 right-0 size-96 rounded-full bg-emerald-600/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 size-80 rounded-full bg-amber-700/5 blur-2xl" />
+        {/* BESPOKE BRAND CRAFT BACKGROUND ARTWORK */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          {/* Warm Ambient Craft & Sunlit Atmospheric Gradients */}
+          <div className="absolute -top-32 left-1/3 -translate-x-1/2 size-[48rem] rounded-full bg-gradient-to-b from-amber-500/15 via-amber-600/5 to-transparent blur-3xl" />
+          <div className="absolute top-1/4 right-0 size-[36rem] rounded-full bg-emerald-600/6 blur-3xl" />
+          <div className="absolute bottom-0 left-0 size-[30rem] rounded-full bg-amber-700/8 blur-2xl" />
+
+          {/* Artisanal Laid-Paper Texture Lines */}
+          <svg className="absolute inset-0 size-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="paper-laid-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="40" x2="40" y2="40" stroke="#221610" strokeWidth="0.8" />
+                <line x1="40" y1="0" x2="40" y2="40" stroke="#221610" strokeWidth="0.8" />
+                <line x1="0" y1="10" x2="40" y2="10" stroke="#221610" strokeWidth="0.3" strokeDasharray="1 3" />
+                <line x1="0" y1="20" x2="40" y2="20" stroke="#221610" strokeWidth="0.3" strokeDasharray="1 3" />
+                <line x1="0" y1="30" x2="40" y2="30" stroke="#221610" strokeWidth="0.3" strokeDasharray="1 3" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#paper-laid-grid)" />
+          </svg>
+
+          {/* Flowing Corrugated Flute & Udaan Wing Craft Vector Lines */}
+          <svg
+            viewBox="0 0 1440 900"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute inset-0 size-full object-cover"
+          >
+            {/* Soft Corrugated Flute Sine Contours across the background */}
+            <path
+              d="M-100 280 C 180 200, 380 360, 680 250 C 980 140, 1180 320, 1540 220"
+              stroke="#b45309"
+              strokeWidth="1.5"
+              strokeOpacity="0.14"
+              strokeDasharray="6 8"
+            />
+            <path
+              d="M-100 310 C 180 230, 380 390, 680 280 C 980 170, 1180 350, 1540 250"
+              stroke="#d97706"
+              strokeWidth="1.2"
+              strokeOpacity="0.18"
+            />
+            <path
+              d="M-100 340 C 180 260, 380 420, 680 310 C 980 200, 1180 380, 1540 280"
+              stroke="#b45309"
+              strokeWidth="1"
+              strokeOpacity="0.12"
+              strokeDasharray="4 6"
+            />
+
+            {/* Bottom Corrugated Waves */}
+            <path
+              d="M-50 720 C 220 660, 480 780, 800 700 C 1120 620, 1340 760, 1550 680"
+              stroke="#b45309"
+              strokeWidth="1.2"
+              strokeOpacity="0.12"
+            />
+            <path
+              d="M-50 750 C 220 690, 480 810, 800 730 C 1120 650, 1340 790, 1550 710"
+              stroke="#d97706"
+              strokeWidth="1"
+              strokeOpacity="0.15"
+              strokeDasharray="8 6"
+            />
+
+            {/* Stylized Udaan Brand Sprout / Wings Emblem Watermark (Behind Left Headline & Center) */}
+            <g transform="translate(140, 110) scale(1.7)" strokeOpacity="0.22" fillOpacity="0.04">
+              {/* Left Wing / Sprout Petals */}
+              <path
+                d="M 100 160 C 85 105, 35 70, 0 75 C 40 90, 70 120, 85 160 Z"
+                fill="#d97706"
+                stroke="#b45309"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M 100 160 C 90 120, 55 90, 20 92 C 55 105, 78 132, 92 160"
+                stroke="#d97706"
+                strokeWidth="0.9"
+              />
+              <path
+                d="M 100 160 C 95 130, 70 108, 42 108 C 65 120, 85 140, 96 160"
+                stroke="#b45309"
+                strokeWidth="0.7"
+              />
+
+              {/* Right Wing / Sprout Petals */}
+              <path
+                d="M 100 160 C 115 105, 165 70, 200 75 C 160 90, 130 120, 115 160 Z"
+                fill="#d97706"
+                stroke="#b45309"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M 100 160 C 110 120, 145 90, 180 92 C 145 105, 122 132, 108 160"
+                stroke="#d97706"
+                strokeWidth="0.9"
+              />
+              <path
+                d="M 100 160 C 105 130, 130 108, 158 108 C 135 120, 115 140, 104 160"
+                stroke="#b45309"
+                strokeWidth="0.7"
+              />
+
+              {/* Central Sprout Stem */}
+              <path
+                d="M 100 160 L 100 185"
+                stroke="#b45309"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </g>
+
+            {/* Second Subtle Wing Motif in Upper Right */}
+            <g transform="translate(1060, 50) scale(1.2) rotate(10)" strokeOpacity="0.16" fillOpacity="0.03">
+              <path
+                d="M 100 160 C 85 105, 35 70, 0 75 C 40 90, 70 120, 85 160 Z"
+                fill="#b45309"
+                stroke="#b45309"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M 100 160 C 115 105, 165 70, 200 75 C 160 90, 130 120, 115 160 Z"
+                fill="#b45309"
+                stroke="#b45309"
+                strokeWidth="1.2"
+              />
+            </g>
+          </svg>
         </div>
 
         {/* Hero Content Container */}
@@ -105,78 +228,34 @@ function Home() {
               </div>
             </div>
 
-            {/* Right Column: Packaging Showcase & Production Footprint Card */}
+            {/* Right Column: Minimal Paper Packaging Craft Showcase */}
             <div className="hidden lg:block lg:col-span-5">
-              <div className="overflow-hidden rounded-3xl border border-amber-900/20 bg-white/95 p-5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-amber-900/10">
-                {/* Physical Packaging Showcase */}
-                <div className="relative overflow-hidden rounded-2xl border border-amber-900/15 shadow-sm">
+              <div className="group overflow-hidden rounded-3xl border border-amber-900/15 bg-white/90 p-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-amber-900/15">
+                {/* Clean, Minimal Kraft Boxes Photography */}
+                <div className="relative overflow-hidden rounded-2xl border border-amber-900/10 shadow-sm">
                   <img
-                    src="/images/udaan-packaging-showcase.jpg"
-                    alt="Udaan Paper Industries sustainable corrugated packaging solutions showcase"
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+                    src="/images/udaan-minimal-boxes.jpg"
+                    alt="Sustainable corrugated kraft paper packaging boxes and fluted rolls by Udaan Paper Industries"
+                    className="aspect-[16/11] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 right-3 rounded-full bg-emerald-800/90 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-600/30 shadow-sm">
-                    Eco-Friendly & Recyclable
+                  <div className="absolute top-3 right-3 rounded-full bg-emerald-800/85 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-600/30 shadow-xs">
+                    100% Recyclable
                   </div>
                 </div>
 
-                {/* Production Footprint Header */}
-                <div className="mt-5 flex items-center justify-between border-b border-amber-900/10 pb-3.5">
+                {/* Minimal Packaging Caption */}
+                <div className="mt-3.5 flex items-center justify-between px-2 py-1">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#221610]">Production Footprint</p>
-                    <p className="text-[0.7rem] text-[#6b584c]">Two Fully Automatic Plants</p>
+                    <p className="font-display text-sm font-bold text-[#221610]">
+                      Corrugated Kraft Packaging
+                    </p>
+                    <p className="text-xs text-[#6b584c]">
+                      Two Fully Automatic Plants · Pithampur & Kanpur
+                    </p>
                   </div>
-                  <span className="rounded-full bg-amber-600/10 px-3 py-1 text-xs font-bold text-amber-800 border border-amber-600/25">
-                    30,000 TPA Installed
+                  <span className="rounded-full bg-amber-600/10 px-3 py-1 text-xs font-bold text-amber-800 border border-amber-600/20">
+                    30,000 TPA
                   </span>
-                </div>
-
-                <div className="mt-3.5 space-y-2.5">
-                  {/* Unit I Card */}
-                  <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3.5 transition-all hover:border-amber-700/30">
-                    <div className="flex items-center justify-between">
-                      <p className="font-display text-sm font-bold text-[#221610]">Unit I — Pithampur</p>
-                      <span className="text-xs font-bold text-amber-800">22,500 TPA</span>
-                    </div>
-                    <p className="mt-1 text-xs text-[#5c4a3e]">
-                      Central & West India hub · Expanding toward <strong className="text-[#221610]">52,500 TPA</strong>
-                    </p>
-                    <p className="mt-0.5 text-[0.7rem] text-[#7a6659]">
-                      High-speed automatic corrugation & converting
-                    </p>
-                  </div>
-
-                  {/* Unit II Card */}
-                  <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3.5 transition-all hover:border-amber-700/30">
-                    <div className="flex items-center justify-between">
-                      <p className="font-display text-sm font-bold text-[#221610]">Unit II — Kanpur</p>
-                      <span className="text-xs font-bold text-amber-800">7,500 TPA</span>
-                    </div>
-                    <p className="mt-1 text-xs text-[#5c4a3e]">
-                      Commissioned 2024 · Serving Northern consumer & industrial belt
-                    </p>
-                    <p className="mt-0.5 text-[0.7rem] text-[#7a6659]">
-                      Precision die-cutting & multi-color flexo
-                    </p>
-                  </div>
-
-                  {/* Logistics & Sustainability Grid */}
-                  <div className="grid grid-cols-2 gap-2.5 pt-0.5">
-                    <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3 text-center">
-                      <p className="font-display text-xl font-bold text-[#221610]">26</p>
-                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-[#6b584c]">
-                        Owned Trucks
-                      </p>
-                      <p className="text-[0.65rem] text-[#7a6659]">Direct dock delivery</p>
-                    </div>
-                    <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3 text-center">
-                      <p className="font-display text-xl font-bold text-emerald-700">100%</p>
-                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-[#6b584c]">
-                        Recyclable
-                      </p>
-                      <p className="text-[0.65rem] text-[#7a6659]">Sustainable kraft board</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
