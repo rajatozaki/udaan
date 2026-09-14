@@ -36,7 +36,7 @@ function ContactPage() {
         image="/images/fleet.jpg"
       />
 
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <span className="inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
@@ -48,7 +48,7 @@ function ContactPage() {
             <div className="mt-8 space-y-4">
               <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 font-semibold text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
+                className="flex items-center gap-3 rounded-2xl border border-amber-900/15 bg-white p-4 font-semibold text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
               >
                 <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
                   <Phone className="size-5" />
@@ -57,7 +57,7 @@ function ContactPage() {
               </a>
               <a
                 href={SITE.emailHref}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 font-semibold text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
+                className="flex items-center gap-3 rounded-2xl border border-amber-900/15 bg-white p-4 font-semibold text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
               >
                 <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
                   <Mail className="size-5" />
@@ -70,9 +70,9 @@ function ContactPage() {
               {PLANTS.map((plant) => (
                 <div
                   key={plant.id}
-                  className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all hover:border-amber-400/50"
+                  className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white p-5 shadow-sm transition-all hover:border-amber-400/50"
                 >
-                  <div className="overflow-hidden rounded-2xl bg-slate-100">
+                  <div className="overflow-hidden rounded-2xl bg-amber-50/40">
                     <img
                       src={plant.image}
                       alt=""
@@ -91,7 +91,7 @@ function ContactPage() {
             </div>
           </div>
 
-          <Reveal className="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-xl md:col-span-7 md:p-12">
+          <Reveal className="rounded-3xl border border-amber-900/15 bg-white p-8 shadow-xl md:col-span-7 md:p-12">
             {sent ? (
               <div className="flex min-h-96 flex-col justify-center text-center">
                 <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">

@@ -8,9 +8,9 @@
   --color-ink: #07090e;
   --color-ink-2: #0e131f;
   --color-ink-3: #161e31;
-  --color-paper: #f8fafc;
-  --color-paper-2: #f1f5f9;
-  --color-sand: #e2e8f0;
+  --color-paper: #f7f4ed;
+  --color-paper-2: #efebe0;
+  --color-sand: #dfd7c5;
   --color-kraft: #f59e0b;
   --color-gold: #f59e0b;
   --color-signal: #fbbf24;
@@ -20,7 +20,7 @@
   --color-ink-fg: #0f172a;
   --color-ink-muted: #64748b;
   --color-line: #1e293b;
-  --color-line-paper: #e2e8f0;
+  --color-line-paper: #dfd7c5;
   --color-ring: #f59e0b;
 
   --radius-xs: 4px;
@@ -383,20 +383,30 @@
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(245, 158, 11, 0.12);
 }
 
-main > section.bg-paper,
+.bg-paper,
+section.bg-paper,
+main > section.bg-paper {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='pf'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.52  0 0 0 0 0.42  0 0 0 0 0.32  0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pf)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg, rgba(160, 125, 80, 0.028) 0px, rgba(160, 125, 80, 0.028) 1px, transparent 1px, transparent 36px),
+    radial-gradient(ellipse at 85% 15%, rgba(245, 158, 11, 0.06), transparent 42rem),
+    radial-gradient(ellipse at 15% 85%, rgba(195, 155, 105, 0.05), transparent 40rem);
+}
+
+.bg-paper-2,
+section.bg-paper-2,
 main > section.bg-paper-2 {
   position: relative;
   isolation: isolate;
-}
-
-main > section.bg-paper {
-  background-color: var(--color-paper);
-  background-image: radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.04), transparent 30rem);
-}
-
-main > section.bg-paper-2 {
   background-color: var(--color-paper-2);
-  background-image: radial-gradient(circle at 10% 90%, rgba(245, 158, 11, 0.035), transparent 30rem);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='pf2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.52  0 0 0 0 0.42  0 0 0 0 0.32  0 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pf2)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg, rgba(160, 125, 80, 0.035) 0px, rgba(160, 125, 80, 0.035) 1px, transparent 1px, transparent 36px),
+    radial-gradient(ellipse at 15% 20%, rgba(245, 158, 11, 0.05), transparent 42rem),
+    radial-gradient(ellipse at 85% 80%, rgba(185, 140, 90, 0.06), transparent 40rem);
 }
 
 main > section.bg-ink {

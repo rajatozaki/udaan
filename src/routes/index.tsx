@@ -204,7 +204,7 @@ function Home() {
               </p>
               <Link
                 to="/about"
-                className="mt-8 inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
+                className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
               >
                 Read the story
                 <ArrowUpRight className="size-4 text-amber-600" />
@@ -212,7 +212,7 @@ function Home() {
             </Reveal>
           </div>
           <Reveal variant="image" className="img-zoom md:col-span-7" delay={100}>
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
               <img
                 src="/images/real-warehouse.jpg"
                 alt="Kraft boxes staged in the Pithampur warehouse"
@@ -223,7 +223,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-start gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:sticky md:top-28 md:col-span-4">
             <SectionHeading
@@ -233,7 +233,7 @@ function Home() {
             />
             <Link
               to="/about"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
             >
               Meet the promoters
               <ArrowUpRight className="size-4 text-amber-600" />
@@ -244,9 +244,9 @@ function Home() {
               <Reveal key={person.name} delay={i * 60}>
                 <Link
                   to="/about"
-                  className="group block overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-xl"
+                  className="group block overflow-hidden rounded-3xl border border-amber-900/15 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
-                  <div className="overflow-hidden rounded-2xl bg-slate-100">
+                  <div className="overflow-hidden rounded-2xl bg-amber-50/40">
                     <img
                       src={person.image!}
                       alt={person.name}
@@ -264,7 +264,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="Solutions"
@@ -282,9 +282,9 @@ function Home() {
                 <Link
                   to="/solutions"
                   hash={product.slug}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:bg-white hover:shadow-xl"
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
-                  <div className="overflow-hidden bg-slate-100">
+                  <div className="overflow-hidden bg-amber-50/40">
                     <img
                       src={product.image}
                       alt=""
@@ -347,7 +347,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
@@ -361,7 +361,7 @@ function Home() {
             />
             <Link
               to="/industries"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-400 hover:bg-slate-50"
+              className="inline-flex items-center gap-2 rounded-xl border border-amber-900/15 bg-white/90 px-5 py-2.5 text-sm font-semibold tracking-tight text-slate-900 shadow-xs transition-all hover:border-amber-500 hover:bg-white hover:shadow-md"
             >
               All industries
               <ArrowUpRight className="size-4 text-amber-600" />
@@ -377,7 +377,7 @@ function Home() {
                 <Link
                   to="/industries"
                   hash={ind.slug}
-                  className="group relative block h-full min-h-[280px] overflow-hidden rounded-3xl border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-xl"
+                  className="group relative block h-full min-h-[280px] overflow-hidden rounded-3xl border border-amber-900/15 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-xl"
                 >
                   <div className="h-full overflow-hidden">
                     <img
@@ -398,7 +398,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="Infrastructure"
@@ -416,9 +416,9 @@ function Home() {
                 <Link
                   to="/plants"
                   hash={plant.id}
-                  className="group block overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:bg-white hover:shadow-xl"
+                  className="group block overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
-                  <div className="overflow-hidden bg-slate-100">
+                  <div className="overflow-hidden bg-amber-50/40">
                     <img
                       src={plant.image}
                       alt=""
@@ -438,10 +438,10 @@ function Home() {
                       {plant.name}
                     </h3>
                     <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
-                      <span className="rounded-lg bg-white px-2.5 py-1 border border-slate-200">
+                      <span className="rounded-lg bg-white px-2.5 py-1 border border-amber-900/15">
                         {plant.capacity} installed
                       </span>
-                      <span className="rounded-lg bg-white px-2.5 py-1 border border-slate-200">
+                      <span className="rounded-lg bg-white px-2.5 py-1 border border-amber-900/15">
                         {plant.area}
                       </span>
                       {plant.expanding ? (
@@ -496,7 +496,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white py-16 md:py-20">
+      <section className="border-t border-amber-900/10 bg-paper-2 py-16 md:py-20">
         <div className="site-wrap-wide grid gap-8 md:grid-cols-12 md:items-center">
           <div className="md:col-span-3">
             <div className="flex items-center gap-2">
@@ -509,7 +509,7 @@ function Home() {
             {CERTS.map((c) => (
               <div
                 key={c.code}
-                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4 transition-all hover:border-amber-400/50 hover:bg-white hover:shadow-sm"
+                className="rounded-2xl border border-amber-900/15 bg-white/80 p-4 shadow-xs transition-all hover:border-amber-500/50 hover:bg-white hover:shadow-md"
               >
                 <p className="font-sans text-sm font-bold text-slate-950">{c.code}</p>
                 <p className="mt-1 text-xs text-slate-500">{c.name}</p>

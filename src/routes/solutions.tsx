@@ -41,8 +41,8 @@ function SolutionsPage() {
           key={product.slug}
           id={product.slug}
           className={cn(
-            "scroll-mt-24 py-16 md:py-24",
-            i % 2 ? "bg-slate-50" : "bg-white",
+            "scroll-mt-24 py-16 md:py-24 border-t border-amber-900/10",
+            i % 2 ? "bg-paper-2" : "bg-paper",
           )}
         >
           <div
@@ -52,7 +52,7 @@ function SolutionsPage() {
             )}
           >
             <Reveal variant="image" className="img-zoom md:col-span-6">
-              <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+              <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
                 <img
                   src={product.image}
                   alt=""

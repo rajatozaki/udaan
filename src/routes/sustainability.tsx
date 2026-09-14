@@ -73,7 +73,7 @@ function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid gap-12 md:grid-cols-12 md:items-center">
           <div className="md:col-span-5">
             <SectionHeading
@@ -124,10 +124,10 @@ function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="img-zoom">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
               <img
                 src="/images/flute.jpg"
                 alt="Corrugated flute fibre"

@@ -35,11 +35,11 @@ function PlantsPage() {
         <section
           key={plant.id}
           id={plant.id}
-          className={`scroll-mt-24 py-16 md:py-24 ${i ? "bg-slate-50" : "bg-white"}`}
+          className={`scroll-mt-24 py-16 md:py-24 border-t border-amber-900/10 ${i ? "bg-paper-2" : "bg-paper"}`}
         >
           <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16">
             <Reveal variant="image" className="img-zoom md:col-span-7">
-              <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+              <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
                 <img
                   src={plant.image}
                   alt=""
@@ -56,7 +56,7 @@ function PlantsPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-500">{plant.address}</p>
               
-              <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+              <div className="mt-8 overflow-hidden rounded-2xl border border-amber-900/15 bg-white p-5 shadow-xs">
                 <dl className="divide-y divide-slate-100">
                   {[
                     ["Serves", plant.serves],
@@ -108,10 +108,10 @@ function PlantsPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal variant="image" className="img-zoom md:order-2">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
               <img
                 src="/images/real-lab.jpg"
                 alt="In-house quality laboratory"
@@ -134,7 +134,7 @@ function PlantsPage() {
               {EQUIPMENT.map((e) => (
                 <div
                   key={e}
-                  className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/70 p-3 text-xs font-semibold text-slate-800"
+                  className="flex items-center gap-2.5 rounded-xl border border-amber-900/15 bg-white/80 p-3 text-xs font-semibold text-slate-800"
                 >
                   <span className="size-2 rounded-full bg-amber-500" />
                   {e}
@@ -145,7 +145,7 @@ function PlantsPage() {
               {CERTS.map((c) => (
                 <div
                   key={c.code}
-                  className="rounded-xl border border-slate-200 bg-white p-3 shadow-xs"
+                  className="rounded-xl border border-amber-900/15 bg-white p-3 shadow-xs"
                 >
                   <p className="text-xs font-bold text-slate-950">{c.code}</p>
                   <p className="text-[0.7rem] text-slate-500">{c.name}</p>

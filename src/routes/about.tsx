@@ -31,7 +31,7 @@ function AboutPage() {
 
       <ImageRail images={GALLERY} className="bg-ink" />
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="The board"
@@ -43,10 +43,10 @@ function AboutPage() {
               <Reveal
                 key={person.name}
                 delay={i * 70}
-                className="overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50/50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:bg-white hover:shadow-xl"
+                className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
               >
                 {person.image ? (
-                  <div className="img-zoom overflow-hidden bg-slate-100">
+                  <div className="img-zoom overflow-hidden bg-amber-50/40">
                     <img
                       src={person.image}
                       alt={person.name}
@@ -99,10 +99,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16">
           <Reveal variant="image" className="img-zoom md:col-span-6">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
               <img
                 src="/images/real-lab.jpg"
                 alt="Quality laboratory at the Pithampur plant"
@@ -126,7 +126,7 @@ function AboutPage() {
             </Reveal>
             <div className="mt-8 space-y-3">
               {STRENGTHS.map((s) => (
-                <div key={s} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3.5 text-sm font-medium text-slate-800 shadow-xs">
+                <div key={s} className="flex items-center gap-3 rounded-xl border border-amber-900/15 bg-white p-3.5 text-sm font-medium text-slate-800 shadow-xs">
                   <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
                     ✓
                   </span>
@@ -138,7 +138,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading eyebrow="Journey" title="Milestones, not slogans." />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -146,7 +146,7 @@ function AboutPage() {
               <Reveal
                 key={item.year}
                 delay={i * 20}
-                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 transition-all duration-300 hover:border-amber-400/50 hover:bg-white hover:shadow-md"
+                className="rounded-2xl border border-amber-900/15 bg-white/80 p-6 transition-all duration-300 hover:border-amber-500/50 hover:bg-white hover:shadow-md"
               >
                 <span className="inline-block rounded-lg bg-amber-100 px-3 py-1 font-sans text-xs font-bold text-amber-800">
                   {item.year}
