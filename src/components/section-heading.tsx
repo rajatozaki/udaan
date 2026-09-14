@@ -17,11 +17,16 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={cn("max-w-3xl", className)}>
-      {eyebrow ? <p className="eyebrow mb-4">{eyebrow}</p> : null}
+      {eyebrow ? (
+        <div className="mb-3 inline-flex items-center gap-2">
+          <span className="size-2 rounded-full bg-amber-400" />
+          <p className="eyebrow text-xs tracking-widest text-amber-500 font-semibold">{eyebrow}</p>
+        </div>
+      ) : null}
       <h2
         className={cn(
-          "font-display text-title",
-          onDark ? "text-fg" : "text-ink-fg",
+          "font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl",
+          onDark ? "text-white" : "text-slate-950",
         )}
       >
         {title}
@@ -29,8 +34,8 @@ export function SectionHeading({
       {lede ? (
         <p
           className={cn(
-            "mt-4 max-w-2xl text-lede",
-            onDark ? "text-fg-muted" : "text-ink-muted",
+            "mt-4 max-w-2xl text-base leading-relaxed sm:text-lg",
+            onDark ? "text-slate-300" : "text-slate-600",
           )}
         >
           {lede}

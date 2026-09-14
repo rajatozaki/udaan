@@ -31,33 +31,41 @@ function AboutPage() {
 
       <ImageRail images={GALLERY} className="bg-ink" />
 
-      <section className="bg-paper py-12 md:py-16">
+      <section className="bg-white py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="The board"
             title="The people who run the plants."
             lede="Brothers who came up in corrugated, and a promoter-director on the board. Not a hired-in letterhead."
           />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {LEADERSHIP.map((person, i) => (
-              <Reveal key={person.name} delay={i * 70} className="border border-line-paper bg-paper-2">
+              <Reveal
+                key={person.name}
+                delay={i * 70}
+                className="overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50/50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400/50 hover:bg-white hover:shadow-xl"
+              >
                 {person.image ? (
-                  <div className="img-zoom overflow-hidden bg-sand">
+                  <div className="img-zoom overflow-hidden bg-slate-100">
                     <img
                       src={person.image}
                       alt={person.name}
-                      className="aspect-[3/4] w-full object-cover object-top"
+                      className="aspect-[3/4] w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-[3/4] items-end bg-ink p-6 text-fg">
-                    <p className="font-display text-6xl text-kraft">SJ</p>
+                  <div className="flex aspect-[3/4] items-end bg-slate-950 p-8 text-fg">
+                    <p className="font-display text-7xl font-bold text-amber-400">SJ</p>
                   </div>
                 )}
-                <div className="p-5">
-                  <p className="eyebrow">{person.role}</p>
-                  <h3 className="mt-2 font-display text-2xl">{person.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{person.copy}</p>
+                <div className="p-6">
+                  <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
+                    {person.role}
+                  </span>
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-slate-950">
+                    {person.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{person.copy}</p>
                 </div>
               </Reveal>
             ))}
@@ -65,21 +73,24 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-ink text-fg">
+      <section className="relative overflow-hidden bg-slate-950 text-fg">
         <div className="grid md:grid-cols-2">
           <img
             src="/images/people/promoters.jpg"
             alt="Yash Bakliwal and Sapan Bakliwal"
-            className="aspect-[4/3] w-full object-cover object-top md:aspect-auto md:min-h-[28rem]"
+            className="aspect-[4/3] w-full object-cover object-top md:aspect-auto md:min-h-[32rem]"
           />
-          <div className="flex flex-col justify-end px-5 py-10 sm:px-10 md:px-12">
-            <p className="eyebrow mb-4">Promoters</p>
-            <h2 className="font-display text-title">
+          <div className="flex flex-col justify-center px-6 py-16 sm:px-12 md:px-16">
+            <div className="mb-3 flex items-center gap-2">
+              <span className="size-2 rounded-full bg-amber-400" />
+              <p className="eyebrow text-xs tracking-widest text-amber-400">Promoters</p>
+            </div>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               Yash Bakliwal
               <br />
-              and Sapan Bakliwal.
+              <span className="text-amber-400">and Sapan Bakliwal.</span>
             </h2>
-            <p className="mt-5 max-w-md text-lede text-fg-muted">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
               Managing Director and Whole-time Director & CFO. Civil engineers who
               learned corrugated on the floor, then bought the company and built the
               second plant.
@@ -88,14 +99,16 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
-        <div className="site-wrap-wide grid items-center gap-8 md:grid-cols-12">
+      <section className="bg-slate-50 py-20 md:py-28">
+        <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16">
           <Reveal variant="image" className="img-zoom md:col-span-6">
-            <img
-              src="/images/real-lab.jpg"
-              alt="Quality laboratory at the Pithampur plant"
-              className="aspect-[4/3] w-full object-cover"
-            />
+            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+              <img
+                src="/images/real-lab.jpg"
+                alt="Quality laboratory at the Pithampur plant"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
           </Reveal>
           <div className="md:col-span-6">
             <SectionHeading
@@ -103,7 +116,7 @@ function AboutPage() {
               title="From a 1986 incorporation to a corrugated platform."
               lede="The current promoters acquired the business between FY 2020 and 2022 and turned it toward packaging."
             />
-            <Reveal className="mt-5 space-y-3 text-ink-muted">
+            <Reveal className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
               <p>
                 Manufacturing began at Pithampur in FY 2021–22. Kanpur followed in
                 2024. In January 2025 the company converted to a public limited
@@ -111,28 +124,39 @@ function AboutPage() {
                 box manufacturers in 2023.
               </p>
             </Reveal>
-            <ul className="mt-6 space-y-2">
+            <div className="mt-8 space-y-3">
               {STRENGTHS.map((s) => (
-                <li key={s} className="border-t border-line-paper pt-2 text-sm text-ink-fg">
+                <div key={s} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3.5 text-sm font-medium text-slate-800 shadow-xs">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
+                    ✓
+                  </span>
                   {s}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-paper-2 py-12 md:py-16">
+      <section className="bg-white py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading eyebrow="Journey" title="Milestones, not slogans." />
-          <ol className="mt-8 grid gap-px bg-line-paper sm:grid-cols-2">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TIMELINE.map((item, i) => (
-              <Reveal key={item.year} delay={i * 20} className="bg-paper-2 p-5">
-                <p className="font-sans text-sm font-medium text-kraft">{item.year}</p>
-                <p className="mt-2 text-ink-fg">{item.copy}</p>
+              <Reveal
+                key={item.year}
+                delay={i * 20}
+                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 transition-all duration-300 hover:border-amber-400/50 hover:bg-white hover:shadow-md"
+              >
+                <span className="inline-block rounded-lg bg-amber-100 px-3 py-1 font-sans text-xs font-bold text-amber-800">
+                  {item.year}
+                </span>
+                <p className="mt-4 text-sm leading-relaxed text-slate-700 font-medium">
+                  {item.copy}
+                </p>
               </Reveal>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 

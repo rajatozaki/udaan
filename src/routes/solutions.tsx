@@ -40,36 +40,51 @@ function SolutionsPage() {
         <section
           key={product.slug}
           id={product.slug}
-          className={cn("scroll-mt-24 py-12 md:py-16", i % 2 ? "bg-paper-2" : "bg-paper")}
+          className={cn(
+            "scroll-mt-24 py-16 md:py-24",
+            i % 2 ? "bg-slate-50" : "bg-white",
+          )}
         >
           <div
             className={cn(
-              "site-wrap-wide grid items-center gap-10 md:grid-cols-12",
+              "site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16",
               i % 2 && "md:[&>*:first-child]:order-2",
             )}
           >
             <Reveal variant="image" className="img-zoom md:col-span-6">
-              <img
-                src={product.image}
-                alt=""
-                className="aspect-[4/3] w-full object-cover"
-              />
+              <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+                <img
+                  src={product.image}
+                  alt=""
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
             </Reveal>
-            <div className="md:col-span-6 md:px-6">
-              <p className="eyebrow">{product.kicker}</p>
-              <h2 className="mt-4 font-display text-title">{product.name}</h2>
-              <p className="mt-5 text-lede text-ink-muted">{product.summary}</p>
-              <p className="mt-4 text-ink-muted">{product.details}</p>
-              <Button variant="ink" className="mt-8" onClick={() => setOpen(true)}>
-                Specify this pack
-              </Button>
+            <div className="md:col-span-6 md:px-4">
+              <span className="inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-800 uppercase">
+                {product.kicker}
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+                {product.name}
+              </h2>
+              <p className="mt-5 text-base font-medium leading-relaxed text-slate-700 sm:text-lg">
+                {product.summary}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-500">
+                {product.details}
+              </p>
+              <div className="mt-8">
+                <Button variant="primary" size="lg" onClick={() => setOpen(true)}>
+                  Specify this pack
+                </Button>
+              </div>
             </div>
           </div>
         </section>
       ))}
 
-      <section className="bg-ink py-12 text-fg md:py-16">
-        <div className="site-wrap-wide grid gap-12 md:grid-cols-2">
+      <section className="relative overflow-hidden border-y border-white/10 bg-slate-950 py-20 text-fg md:py-28">
+        <div className="site-wrap-wide grid gap-12 md:grid-cols-2 md:items-center">
           <SectionHeading
             onDark
             eyebrow="Capability"
@@ -81,16 +96,19 @@ function SolutionsPage() {
             }
             lede="Ten boxes or a shift of thousands — automatic machines, in-house print and a laboratory that does not wave lots through."
           />
-          <Reveal className="grid gap-px bg-line sm:grid-cols-2">
+          <Reveal className="grid gap-4 sm:grid-cols-2">
             {[
               ["3-ply & 5-ply", "Board constructions matched to stacking height and climate."],
               ["Print", "Single and multi-colour, on kraft and white-top liners."],
               ["Die-cut", "Inserts, partitions, fitments — designed with the outer."],
               ["Sheets & rolls", "For converters and packing halls that take board, not boxes."],
             ].map(([t, d]) => (
-              <div key={t} className="bg-ink p-6">
-                <h3 className="font-display text-2xl">{t}</h3>
-                <p className="mt-3 text-sm text-fg-muted">{d}</p>
+              <div
+                key={t}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.06]"
+              >
+                <h3 className="font-display text-xl font-bold text-white">{t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">{d}</p>
               </div>
             ))}
           </Reveal>

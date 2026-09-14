@@ -54,23 +54,27 @@ function SustainabilityPage() {
 
       <ImageRail images={GALLERY.slice(0, 8)} className="bg-ink" />
 
-      <section className="overflow-hidden bg-ink">
-        <div className="grid md:grid-cols-2">
-          <img
-            src="/images/gallery-sheets.jpg"
-            alt="Corrugated sheets"
-            className="aspect-[4/3] w-full object-cover md:min-h-[28rem]"
-          />
-          <img
-            src="/images/sustainability.jpg"
-            alt="Paper-first packaging"
-            className="aspect-[4/3] w-full object-cover md:min-h-[28rem]"
-          />
+      <section className="bg-slate-950 py-8">
+        <div className="site-wrap-wide grid gap-6 md:grid-cols-2">
+          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-xl">
+            <img
+              src="/images/gallery-sheets.jpg"
+              alt="Corrugated sheets"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105 md:min-h-[26rem]"
+            />
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-xl">
+            <img
+              src="/images/sustainability.jpg"
+              alt="Paper-first packaging"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105 md:min-h-[26rem]"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
-        <div className="site-wrap-wide grid gap-12 md:grid-cols-12">
+      <section className="bg-white py-20 md:py-28">
+        <div className="site-wrap-wide grid gap-12 md:grid-cols-12 md:items-center">
           <div className="md:col-span-5">
             <SectionHeading
               eyebrow="The stance"
@@ -82,7 +86,7 @@ function SustainabilityPage() {
               }
             />
           </div>
-          <Reveal className="md:col-span-7 space-y-5 text-lede text-ink-muted">
+          <Reveal className="space-y-6 text-base leading-relaxed text-slate-600 sm:text-lg md:col-span-7">
             <p>
               Plastic packaging has a long afterlife. Corrugated does not have to.
               Udaan manufactures 100% recyclable boxes, sheets and rolls, keeps
@@ -98,26 +102,38 @@ function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="bg-ink py-12 text-fg md:py-16">
-        <div className="site-wrap-wide grid gap-px bg-line md:grid-cols-2">
+      <section className="relative overflow-hidden border-y border-white/10 bg-slate-950 py-20 text-fg md:py-28">
+        <div className="site-wrap-wide grid gap-6 sm:grid-cols-2">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.n} delay={i * 50} className="bg-ink p-8 md:p-12">
-              <p className="eyebrow">{p.n}</p>
-              <h3 className="mt-6 font-display text-3xl">{p.t}</h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-fg-muted">{p.d}</p>
+            <Reveal
+              key={p.n}
+              delay={i * 50}
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.06] md:p-10"
+            >
+              <span className="inline-block rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-1 font-sans text-xs font-bold tracking-widest text-amber-400">
+                {p.n}
+              </span>
+              <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-white md:text-3xl">
+                {p.t}
+              </h3>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-300 md:text-base">
+                {p.d}
+              </p>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
-        <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2">
+      <section className="bg-slate-50 py-20 md:py-28">
+        <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="img-zoom">
-            <img
-              src="/images/flute.jpg"
-              alt="Corrugated flute fibre"
-              className="aspect-[16/10] w-full object-cover"
-            />
+            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+              <img
+                src="/images/flute.jpg"
+                alt="Corrugated flute fibre"
+                className="aspect-[16/10] w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
           </Reveal>
           <div>
             <SectionHeading
