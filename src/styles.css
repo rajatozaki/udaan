@@ -34,23 +34,23 @@
   --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Clash Display", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-ink: #07090e;
-  --color-ink-2: #0e131f;
-  --color-ink-3: #161e31;
-  --color-paper: #f7f4ed;
-  --color-paper-2: #efebe0;
-  --color-sand: #dfd7c5;
-  --color-kraft: #f59e0b;
-  --color-gold: #f59e0b;
-  --color-signal: #fbbf24;
-  --color-rust: #ea580c;
-  --color-fg: #f8fafc;
-  --color-fg-muted: #94a3b8;
-  --color-ink-fg: #0f172a;
-  --color-ink-muted: #64748b;
-  --color-line: #1e293b;
-  --color-line-paper: #dfd7c5;
-  --color-ring: #f59e0b;
+  --color-ink: #18110b;
+  --color-ink-2: #231811;
+  --color-ink-3: #2d1f16;
+  --color-paper: #fbf8f1;
+  --color-paper-2: #f3ecdf;
+  --color-sand: #ded0bc;
+  --color-kraft: #b45309;
+  --color-gold: #d97706;
+  --color-signal: #f59e0b;
+  --color-rust: #c2410c;
+  --color-fg: #fbf8f2;
+  --color-fg-muted: #a89485;
+  --color-ink-fg: #221610;
+  --color-ink-muted: #6b584c;
+  --color-line: #3b291d;
+  --color-line-paper: #ded0bc;
+  --color-ring: #d97706;
 
   --radius-xs: 4px;
   --radius-sm: 8px;
@@ -455,7 +455,7 @@ footer.bg-ink {
   overflow: hidden;
   height: min(44vh, 22rem);
   border-block: 1px solid rgba(255, 255, 255, 0.08);
-  background: #07090e;
+  background: #18110b;
 }
 
 .image-rail {

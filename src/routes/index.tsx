@@ -33,40 +33,35 @@ function Home() {
 
   return (
     <main>
-      {/* AUTHENTIC INDUSTRIAL PAPER PACKAGING HERO */}
-      <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-slate-950 text-fg md:min-h-svh">
-        {/* Real Industrial Corrugator Plant Floor Photography */}
-        <div className="absolute inset-0 overflow-hidden">
-          <img
-            src="/images/plant-interior.jpg"
-            alt="Automatic high-speed corrugator plant floor at Udaan Paper Industries"
-            className="hero-media absolute inset-0 size-full object-cover object-center"
-          />
-          {/* Deep Cinematic Industrial Contrast Scrim */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-slate-950/90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/70" />
+      {/* AUTHENTIC WARM CRAFT PAPER PACKAGING HERO */}
+      <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#faf6ee] text-[#221610] md:min-h-svh border-b border-amber-900/10">
+        {/* Warm Ambient Craft & Sunlit Atmospheric Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[42rem] rounded-full bg-amber-500/10 blur-3xl" />
+          <div className="absolute top-1/4 right-0 size-96 rounded-full bg-emerald-600/5 blur-3xl" />
+          <div className="absolute bottom-0 left-0 size-80 rounded-full bg-amber-700/5 blur-2xl" />
         </div>
 
         {/* Hero Content Container */}
         <div className="hero-enter site-wrap-wide relative z-10 mx-auto w-full py-28 md:py-36">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
             
             {/* Left Column: Bold Industrial Headline & Value Proposition */}
             <div className="lg:col-span-7">
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
-                <span className="size-2 rounded-full bg-amber-400 animate-pulse" />
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-900/15 bg-amber-600/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-950 shadow-xs backdrop-blur-md">
+                <span className="size-2 rounded-full bg-emerald-600 animate-pulse" />
                 <span>Udaan Paper Industries · Est. 1986</span>
               </div>
 
-              <h1 className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02]">
+              <h1 className="font-display text-5xl font-extrabold tracking-tight text-[#221610] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02]">
                 Built to hold.
                 <br />
-                <span className="text-amber-400">
+                <span className="bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent">
                   Made to move.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-300 md:text-xl font-sans">
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#5c4a3e] md:text-xl font-sans">
                 Corrugated packaging engineered at scale for the brands that feed,
                 clothe and move India.
               </p>
@@ -75,14 +70,14 @@ function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-xl bg-amber-500 px-7 py-3.5 font-sans font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition-all duration-300 hover:bg-amber-400"
+                  className="rounded-xl bg-amber-700 px-7 py-3.5 font-sans font-semibold text-white shadow-xl shadow-amber-900/20 transition-all duration-300 hover:bg-amber-800 border border-amber-800/30"
                 >
                   <Link to="/solutions">Explore solutions</Link>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 font-sans font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+                  className="rounded-xl border border-amber-900/20 bg-white/90 px-7 py-3.5 font-sans font-semibold text-[#221610] backdrop-blur-md transition-all duration-300 hover:border-amber-900/40 hover:bg-white shadow-xs"
                   onClick={() => setOpen(true)}
                 >
                   Request a quote
@@ -90,79 +85,96 @@ function Home() {
               </div>
 
               {/* Manufacturing Capabilities Strip */}
-              <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6 text-xs text-slate-400">
-                <span className="flex items-center gap-2">
-                  <Factory className="size-4 text-amber-400" />
+              <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-amber-900/15 pt-6 text-xs text-[#5c4a3e]">
+                <span className="flex items-center gap-2 font-medium">
+                  <Factory className="size-4 text-amber-700" />
                   Automatic Corrugation Lines
                 </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-amber-400" />
+                <span className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="size-4 text-emerald-700" />
                   In-House Quality Laboratory
                 </span>
-                <span className="flex items-center gap-2">
-                  <Truck className="size-4 text-amber-400" />
+                <span className="flex items-center gap-2 font-medium">
+                  <Truck className="size-4 text-amber-700" />
                   26 Dedicated Fleet Trucks
+                </span>
+                <span className="flex items-center gap-2 font-medium">
+                  <Recycle className="size-4 text-emerald-700" />
+                  100% Recyclable Kraft Board
                 </span>
               </div>
             </div>
 
-            {/* Right Column: Authentic Manufacturing Platforms Overview */}
+            {/* Right Column: Packaging Showcase & Production Footprint Card */}
             <div className="hidden lg:block lg:col-span-5">
-              <div className="rounded-3xl border border-white/15 bg-slate-900/80 p-7 shadow-2xl backdrop-blur-xl">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-white">Production Footprint</p>
-                    <p className="text-[0.7rem] text-slate-400">Two Fully Automatic Plants</p>
+              <div className="overflow-hidden rounded-3xl border border-amber-900/20 bg-white/95 p-5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-amber-900/10">
+                {/* Physical Packaging Showcase */}
+                <div className="relative overflow-hidden rounded-2xl border border-amber-900/15 shadow-sm">
+                  <img
+                    src="/images/udaan-packaging-showcase.jpg"
+                    alt="Udaan Paper Industries sustainable corrugated packaging solutions showcase"
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3 rounded-full bg-emerald-800/90 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-emerald-600/30 shadow-sm">
+                    Eco-Friendly & Recyclable
                   </div>
-                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold text-amber-400 border border-amber-500/30">
+                </div>
+
+                {/* Production Footprint Header */}
+                <div className="mt-5 flex items-center justify-between border-b border-amber-900/10 pb-3.5">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-[#221610]">Production Footprint</p>
+                    <p className="text-[0.7rem] text-[#6b584c]">Two Fully Automatic Plants</p>
+                  </div>
+                  <span className="rounded-full bg-amber-600/10 px-3 py-1 text-xs font-bold text-amber-800 border border-amber-600/25">
                     30,000 TPA Installed
                   </span>
                 </div>
 
-                <div className="mt-5 space-y-4">
+                <div className="mt-3.5 space-y-2.5">
                   {/* Unit I Card */}
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 transition-all hover:border-amber-500/30">
+                  <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3.5 transition-all hover:border-amber-700/30">
                     <div className="flex items-center justify-between">
-                      <p className="font-display text-base font-bold text-white">Unit I — Pithampur</p>
-                      <span className="text-sm font-bold text-amber-400">22,500 TPA</span>
+                      <p className="font-display text-sm font-bold text-[#221610]">Unit I — Pithampur</p>
+                      <span className="text-xs font-bold text-amber-800">22,500 TPA</span>
                     </div>
-                    <p className="mt-1 text-xs text-slate-300">
-                      Central & West India hub · Expanding toward <strong className="text-white">52,500 TPA</strong>
+                    <p className="mt-1 text-xs text-[#5c4a3e]">
+                      Central & West India hub · Expanding toward <strong className="text-[#221610]">52,500 TPA</strong>
                     </p>
-                    <p className="mt-1 text-[0.7rem] text-slate-400">
+                    <p className="mt-0.5 text-[0.7rem] text-[#7a6659]">
                       High-speed automatic corrugation & converting
                     </p>
                   </div>
 
                   {/* Unit II Card */}
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 transition-all hover:border-amber-500/30">
+                  <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3.5 transition-all hover:border-amber-700/30">
                     <div className="flex items-center justify-between">
-                      <p className="font-display text-base font-bold text-white">Unit II — Kanpur</p>
-                      <span className="text-sm font-bold text-amber-400">7,500 TPA</span>
+                      <p className="font-display text-sm font-bold text-[#221610]">Unit II — Kanpur</p>
+                      <span className="text-xs font-bold text-amber-800">7,500 TPA</span>
                     </div>
-                    <p className="mt-1 text-xs text-slate-300">
-                      Commissioned 2024 · Serving the Northern consumer & industrial belt
+                    <p className="mt-1 text-xs text-[#5c4a3e]">
+                      Commissioned 2024 · Serving Northern consumer & industrial belt
                     </p>
-                    <p className="mt-1 text-[0.7rem] text-slate-400">
+                    <p className="mt-0.5 text-[0.7rem] text-[#7a6659]">
                       Precision die-cutting & multi-color flexo
                     </p>
                   </div>
 
                   {/* Logistics & Sustainability Grid */}
-                  <div className="grid grid-cols-2 gap-3 pt-1">
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 text-center">
-                      <p className="font-display text-2xl font-bold text-white">26</p>
-                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-slate-400">
+                  <div className="grid grid-cols-2 gap-2.5 pt-0.5">
+                    <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3 text-center">
+                      <p className="font-display text-xl font-bold text-[#221610]">26</p>
+                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-[#6b584c]">
                         Owned Trucks
                       </p>
-                      <p className="text-[0.65rem] text-slate-400">Direct dock delivery</p>
+                      <p className="text-[0.65rem] text-[#7a6659]">Direct dock delivery</p>
                     </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 text-center">
-                      <p className="font-display text-2xl font-bold text-emerald-400">100%</p>
-                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-slate-400">
+                    <div className="rounded-2xl border border-amber-900/10 bg-[#faf6ee] p-3 text-center">
+                      <p className="font-display text-xl font-bold text-emerald-700">100%</p>
+                      <p className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-[#6b584c]">
                         Recyclable
                       </p>
-                      <p className="text-[0.65rem] text-slate-400">Sustainable kraft board</p>
+                      <p className="text-[0.65rem] text-[#7a6659]">Sustainable kraft board</p>
                     </div>
                   </div>
                 </div>
@@ -175,16 +187,16 @@ function Home() {
 
       {/* Modern Bento Stats Strip */}
       <section className="relative z-20 -mt-10 px-4 sm:px-6">
-        <div className="site-wrap-wide grid grid-cols-2 gap-4 rounded-3xl border border-white/10 bg-slate-900/90 p-4 shadow-2xl backdrop-blur-xl md:grid-cols-4 md:p-6">
+        <div className="site-wrap-wide grid grid-cols-2 gap-4 rounded-3xl border border-amber-900/30 bg-[#221610] p-4 shadow-2xl backdrop-blur-xl md:grid-cols-4 md:p-6">
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition-all duration-300 hover:border-amber-500/30 hover:bg-white/[0.04] md:p-6"
+              className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-all duration-300 hover:border-amber-500/40 hover:bg-white/[0.08] md:p-6"
             >
-              <p className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
+              <p className="font-display text-3xl font-bold tracking-tight text-amber-400 md:text-5xl">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-slate-400 sm:text-sm">
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-[#dfd0c0] sm:text-sm">
                 {stat.label}
               </p>
             </div>
@@ -193,18 +205,18 @@ function Home() {
       </section>
 
       <div className="mt-12">
-        <ImageRail images={GALLERY} className="bg-slate-950" />
+        <ImageRail images={GALLERY} className="bg-paper-2" />
       </div>
 
-      <div className="overflow-hidden border-y border-white/10 bg-slate-950 py-5 text-fg">
+      <div className="overflow-hidden border-y border-amber-900/15 bg-[#ebdccb] py-5 text-[#3e2e24]">
         <div className="marquee-track">
           {[...MARQUEE, ...MARQUEE].map((item, i) => (
             <span
               key={`${item}-${i}`}
-              className="flex items-center gap-8 font-sans text-xs font-semibold uppercase tracking-widest text-slate-400"
+              className="flex items-center gap-8 font-sans text-xs font-semibold uppercase tracking-widest text-[#5c4a3e]"
             >
               {item}
-              <span className="size-1.5 rounded-full bg-amber-400" aria-hidden />
+              <span className="size-1.5 rounded-full bg-amber-600" aria-hidden />
             </span>
           ))}
         </div>
@@ -340,7 +352,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/10 bg-slate-950 py-20 text-fg md:py-28">
+      <section className="relative overflow-hidden border-y border-amber-900/20 bg-[#1c120c] py-20 text-[#fbf8f2] md:py-28">
         <div className="site-wrap-wide relative z-10">
           <SectionHeading
             onDark
@@ -358,14 +370,14 @@ function Home() {
               <Reveal
                 key={step.n}
                 delay={i * 50}
-                className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.06]"
+                className="flex flex-col justify-between rounded-2xl border border-amber-900/30 bg-white/[0.04] p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.08]"
               >
                 <div>
                   <span className="inline-block rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-1 font-sans text-xs font-bold tracking-widest text-amber-400">
                     {step.n}
                   </span>
                   <h3 className="mt-6 font-display text-xl font-bold text-white">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">{step.copy}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#d8c5b4]">{step.copy}</p>
                 </div>
               </Reveal>
             ))}
@@ -412,10 +424,10 @@ function Home() {
                       className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/90 via-[#1a110a]/30 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <h3 className="font-display text-2xl font-bold tracking-tight">{ind.name}</h3>
-                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-300">{ind.copy}</p>
+                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#dfd0c0]">{ind.copy}</p>
                   </div>
                 </Link>
               </Reveal>
@@ -484,13 +496,13 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-slate-950 text-fg">
+      <section className="relative overflow-hidden bg-[#1a110a] text-[#fbf8f2]">
         <img
           src="/images/flute.jpg"
           alt=""
-          className="absolute inset-0 size-full object-cover opacity-15"
+          className="absolute inset-0 size-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a110a] via-[#1a110a]/85 to-[#1a110a]" />
         <div className="site-wrap-wide relative z-10 grid gap-12 py-20 md:grid-cols-12 md:py-28">
           <Reveal className="md:col-span-5">
             <div className="mb-3 flex items-center gap-2">
@@ -501,7 +513,7 @@ function Home() {
               The brands that already
               <em className="block text-amber-400"> move on Udaan board.</em>
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-slate-300">
+            <p className="mt-6 text-base leading-relaxed text-[#d8c5b4]">
               And a growing book across food, textile and industrial accounts in
               North, Central and West India.
             </p>
@@ -511,7 +523,7 @@ function Home() {
               {CLIENTS.map((c) => (
                 <div
                   key={c}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:border-amber-400/40 hover:bg-white/[0.06]"
+                  className="flex items-center gap-3 rounded-2xl border border-amber-900/30 bg-[#251a12]/90 p-4 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:border-amber-400/40 hover:bg-[#2c1f17]"
                 >
                   <span className="size-2 rounded-full bg-amber-400" />
                   {c}

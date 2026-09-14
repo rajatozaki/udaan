@@ -38,15 +38,15 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         solid
-          ? "border-b border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-lg shadow-black/20"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-amber-900/20 bg-[#1c120c]/95 backdrop-blur-xl shadow-lg shadow-black/20"
+          : "border-b border-amber-900/10 bg-[#1c120c]/80 backdrop-blur-md",
       )}
     >
       <div className="site-wrap-wide flex h-16 items-center justify-between gap-4 md:h-20">
         <Logo onDark compact={false} />
 
         <nav
-          className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-md lg:flex"
+          className="hidden items-center gap-1 rounded-full border border-amber-900/30 bg-[#261a12]/80 p-1.5 backdrop-blur-md lg:flex"
           aria-label="Primary"
         >
           {NAV.map((item) => (
@@ -56,8 +56,8 @@ export function SiteHeader() {
               className={cn(
                 "rounded-full px-4 py-1.5 font-sans text-sm font-medium tracking-tight transition-all duration-200",
                 pathname === item.to
-                  ? "bg-white/15 text-amber-400 font-semibold shadow-xs"
-                  : "text-slate-300 hover:bg-white/5 hover:text-white",
+                  ? "bg-amber-500/20 text-amber-400 font-semibold shadow-xs border border-amber-500/30"
+                  : "text-[#d8c5b4] hover:bg-white/5 hover:text-white",
               )}
             >
               {item.label}
@@ -69,14 +69,14 @@ export function SiteHeader() {
           <Button
             variant="primary"
             size="sm"
-            className="hidden sm:inline-flex"
+            className="hidden sm:inline-flex bg-gradient-to-r from-amber-600 to-amber-500 text-white border border-amber-400/40 shadow-sm hover:from-amber-500 hover:to-amber-400"
             onClick={() => setOpen(true)}
           >
             Request a quote
           </Button>
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-fg transition-colors hover:bg-white/10 lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-xl border border-amber-900/30 bg-[#261a12] text-[#fbf8f2] transition-colors hover:bg-white/10 lg:hidden"
             aria-label={menu ? "Close menu" : "Open menu"}
             aria-expanded={menu}
             onClick={() => setMenu((v) => !v)}
@@ -87,7 +87,7 @@ export function SiteHeader() {
       </div>
 
       {menu ? (
-        <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col justify-between border-t border-white/10 bg-slate-950/95 px-6 pb-12 pt-8 backdrop-blur-2xl lg:hidden">
+        <div className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col justify-between border-t border-amber-900/20 bg-[#1a110b]/98 px-6 pb-12 pt-8 backdrop-blur-2xl lg:hidden">
           <nav className="flex flex-col gap-2" aria-label="Mobile">
             {NAV.map((item) => (
               <Link
@@ -96,16 +96,23 @@ export function SiteHeader() {
                 className={cn(
                   "rounded-xl px-4 py-3.5 font-sans text-xl font-medium transition-colors",
                   pathname === item.to
-                    ? "bg-white/10 text-amber-400 font-semibold"
-                    : "text-slate-200 hover:bg-white/5 hover:text-white",
+                    ? "bg-amber-500/20 text-amber-400 font-semibold"
+                    : "text-[#d8c5b4] hover:bg-white/5 hover:text-white",
                 )}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <Button className="w-full" size="lg" onClick={() => setOpen(true)}>
+          <div className="mt-8 border-t border-amber-900/20 pt-6">
+            <Button
+              className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white border border-amber-400/40"
+              size="lg"
+              onClick={() => {
+                setMenu(false);
+                setOpen(true);
+              }}
+            >
               Request a quote
             </Button>
           </div>
