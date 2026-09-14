@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <main>
-      <section className="relative flex min-h-svh items-end overflow-hidden bg-ink text-fg">
+      <section className="relative flex min-h-[88svh] items-end overflow-hidden bg-ink text-fg md:min-h-svh">
         {reduceMotion ? (
           <img
             src="/images/hero-line.jpg"
@@ -54,16 +54,19 @@ function Home() {
         )}
         <div className="hero-scrim absolute inset-0" />
         <div className="noise" />
-        <div className="hero-enter site-wrap-wide relative z-10 w-full pb-16 pt-32 md:pb-24">
-          <p className="eyebrow mb-6">Udaan Paper Industries</p>
-          <h1 className="max-w-5xl font-display text-display">
-            Gain a new perspective
+        <div className="hero-enter site-wrap-wide relative z-10 w-full pb-14 pt-32 md:pb-20">
+          <div className="mb-8 flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-fg-muted">
+            <span className="h-px w-10 bg-gold" />
+            Udaan Paper Industries
+          </div>
+          <h1 className="max-w-6xl font-display text-display leading-[0.98]">
+            Built to hold.
             <br />
-            in packaging.
+            <span className="text-gold">Made to move.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-lede text-fg-muted">
-            Fully automatic plants in Pithampur and Kanpur. Corrugated boxes,
-            sheets and rolls for the brands that feed, clothe and move India.
+          <p className="mt-8 max-w-2xl text-lede text-fg-muted md:text-xl">
+            Corrugated packaging engineered at scale for the brands that feed,
+            clothe and move India.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild>
@@ -94,15 +97,15 @@ function Home() {
         </div>
       </div>
 
-      <section className="bg-paper py-12 md:py-16">
-        <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12">
-          <div className="md:col-span-6">
+      <section className="dramatic-grid bg-paper py-16 md:py-24">
+        <div className="site-wrap-wide grid items-center gap-10 md:grid-cols-12 md:gap-14">
+          <div className="dramatic-rule pt-7 md:col-span-5">
             <SectionHeading
               eyebrow="The company"
-              title={
+                title={
                 <>
-                  Two plants. One specification.
-                  <em> Relentless delivery.</em>
+                  Two plants. One standard.
+                  <em> No compromise.</em>
                 </>
               }
               lede="Udaan Paper Industries Limited is a corrugated packaging manufacturer with fully automatic production at Pithampur, Madhya Pradesh and Kanpur, Uttar Pradesh — close to the FMCG, food and textile clusters we serve."
@@ -110,8 +113,7 @@ function Home() {
             <Reveal delay={80}>
               <p className="mt-6 max-w-xl text-ink-muted">
                 From board design to the dock, the process stays in-house: corrugation,
-                conversion, a working laboratory, and a fleet of twenty-six trucks.
-                Named among India’s Top 10 corrugated box manufacturers in 2023.
+                conversion, quality testing and delivery on our own fleet.
               </p>
               <Link
                 to="/about"
@@ -122,24 +124,24 @@ function Home() {
               </Link>
             </Reveal>
           </div>
-          <Reveal variant="image" className="img-zoom md:col-span-6" delay={100}>
+          <Reveal variant="image" className="image-frame md:col-span-7" delay={100}>
             <img
               src="/images/real-warehouse.jpg"
               alt="Kraft boxes staged in the Pithampur warehouse"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[5/4] w-full object-cover object-center"
             />
           </Reveal>
         </div>
       </section>
 
-      <section className="border-y border-line-paper bg-paper-2">
-        <div className="site-wrap-wide grid grid-cols-2 gap-px bg-line-paper md:grid-cols-4">
+      <section className="border-y border-line bg-ink">
+        <div className="site-wrap-wide grid grid-cols-2 gap-px bg-line md:grid-cols-4">
           {STATS.map((stat) => (
-            <div key={stat.label} className="bg-paper-2 px-5 py-10 md:px-8 md:py-14">
-              <p className="font-display text-4xl text-ink-fg md:text-5xl">
+            <div key={stat.label} className="group bg-ink px-5 py-10 transition-colors duration-500 hover:bg-ink-2 md:px-8 md:py-14">
+              <p className="font-display text-4xl text-fg md:text-6xl">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="mt-3 text-sm tracking-tight text-ink-muted">
+              <p className="mt-3 text-sm tracking-tight text-fg-muted">
                 {stat.label}
               </p>
             </div>
@@ -147,7 +149,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
+      <section className="bg-paper py-16 md:py-24">
         <div className="site-wrap-wide grid items-end gap-8 md:grid-cols-12">
           <div className="md:col-span-4">
             <SectionHeading
@@ -163,11 +165,11 @@ function Home() {
               <ArrowUpRight className="size-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:col-span-8">
+          <div className="grid grid-cols-2 gap-3 md:col-span-8 md:gap-5">
             {LEADERSHIP.filter((p) => p.image).map((person, i) => (
               <Reveal key={person.name} delay={i * 60}>
                 <Link to="/about" className="group block">
-                  <div className="img-zoom overflow-hidden bg-sand">
+                  <div className="image-frame">
                     <img
                       src={person.image!}
                       alt={person.name}
@@ -183,7 +185,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-12 md:py-16">
+      <section className="bg-paper-2 py-16 md:py-24">
         <div className="site-wrap-wide">
           <SectionHeading
             eyebrow="Solutions"
@@ -195,22 +197,22 @@ function Home() {
             }
             lede="Boxes, printed cartons, sheets, rolls and engineered structures — produced on automatic lines, qualified in our laboratory."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             {PRODUCTS.map((product, i) => (
               <Reveal key={product.slug} delay={i * 60}>
                 <Link
                   to="/solutions"
                   hash={product.slug}
-                  className="group block border border-line-paper bg-paper transition-colors hover:border-ink"
+                  className="group block bg-paper transition-transform duration-500 hover:-translate-y-1"
                 >
-                  <div className="img-zoom">
+                  <div className="image-frame">
                     <img
                       src={product.image}
                       alt=""
                       className="aspect-[16/10] w-full object-cover"
                     />
                   </div>
-                  <div className="flex items-start justify-between gap-4 p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-4 border-x border-b border-line-paper p-6 md:p-8">
                     <div>
                       <p className="eyebrow">{product.kicker}</p>
                       <h3 className="mt-3 font-display text-3xl">{product.name}</h3>
