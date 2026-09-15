@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
+import { OrigamiBirdSmall } from "@/components/origami-birds";
 
 export function SectionHeading({
   eyebrow,
@@ -19,7 +20,7 @@ export function SectionHeading({
     <Reveal className={cn("max-w-3xl", className)}>
       {eyebrow ? (
         <div className="mb-3 inline-flex items-center gap-2">
-          <span className="size-2 rounded-full bg-amber-400" />
+          <OrigamiBirdSmall className="size-3 text-amber-600" />
           <p className="eyebrow text-xs tracking-widest text-amber-500 font-semibold">{eyebrow}</p>
         </div>
       ) : null}

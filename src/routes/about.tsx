@@ -4,6 +4,7 @@ import { ImageRail } from "@/components/image-rail";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { OrigamiBirdSmall, OrigamiBirdSeal, OrigamiFoldDivider } from "@/components/origami-birds";
 import { GALLERY, LEADERSHIP, STRENGTHS, TIMELINE } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
@@ -33,7 +34,7 @@ function AboutPage() {
             viewBox="0 0 900 600"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -top-10 left-10 size-[42rem] opacity-[0.16] pointer-events-none"
+            className="absolute -top-10 left-10 size-[42rem] opacity-[0.2] pointer-events-none"
           >
             {/* Concentric botanical tree growth rings (paper fiber heritage) */}
             <circle cx="380" cy="280" r="80" stroke="#b45309" strokeWidth="0.8" strokeDasharray="3 4" />
@@ -43,7 +44,6 @@ function AboutPage() {
 
             {/* Geometric Origami Paper Bird in Flight ("Udaan") */}
             <g transform="translate(260, 160) scale(1.1)">
-              {/* Origami facets */}
               <polygon points="120,40 180,110 90,110" fill="#d97706" fillOpacity="0.25" stroke="#b45309" strokeWidth="1.2" />
               <polygon points="180,110 240,60 180,40" fill="#f59e0b" fillOpacity="0.2" stroke="#b45309" strokeWidth="1" />
               <polygon points="90,110 30,80 70,140" fill="#b45309" fillOpacity="0.2" stroke="#b45309" strokeWidth="1" />
@@ -77,7 +77,7 @@ function AboutPage() {
               <Reveal
                 key={person.name}
                 delay={i * 70}
-                className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
+                className="overflow-hidden rounded-3xl paper-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
               >
                 {person.image ? (
                   <div className="img-zoom overflow-hidden bg-amber-50/40">
@@ -88,12 +88,23 @@ function AboutPage() {
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-[3/4] items-end bg-[#241911] p-8 text-white">
-                    <p className="font-display text-7xl font-bold text-amber-400">SJ</p>
+                  <div className="flex aspect-[3/4] flex-col justify-between bg-gradient-to-br from-[#2c1f17] to-[#1c120c] p-6 text-white border-b border-amber-900/20">
+                    <div className="flex justify-end">
+                      <OrigamiBirdSmall className="size-5 text-amber-400/40" />
+                    </div>
+                    <div className="flex flex-col items-center justify-center my-auto">
+                      <div className="flex size-20 items-center justify-center rounded-full border border-amber-500/40 bg-amber-500/10 shadow-inner">
+                        <span className="font-display text-2xl font-bold text-amber-300">SJ</span>
+                      </div>
+                      <span className="mono-spec mt-3 text-[10px] text-amber-400/70 font-semibold">Promoter & Director</span>
+                    </div>
+                    <div className="text-center">
+                      <span className="mono-spec text-[10px] text-amber-200/50">Udaan Governance Board</span>
+                    </div>
                   </div>
                 )}
                 <div className="p-6">
-                  <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
+                  <span className="mono-spec inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
                     {person.role}
                   </span>
                   <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-[#221610]">
@@ -116,7 +127,7 @@ function AboutPage() {
           />
           <div className="flex flex-col justify-center px-6 py-16 sm:px-12 md:px-16">
             <div className="mb-3 flex items-center gap-2">
-              <span className="size-2 rounded-full bg-amber-400" />
+              <OrigamiBirdSmall className="size-3.5 text-amber-400" />
               <p className="eyebrow text-xs tracking-widest text-amber-400">Promoters</p>
             </div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -136,7 +147,7 @@ function AboutPage() {
       <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16">
           <Reveal variant="image" className="img-zoom md:col-span-6">
-            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 paper-card shadow-xl">
               <img
                 src="/images/real-lab.jpg"
                 alt="Quality laboratory at the Pithampur plant"
@@ -160,7 +171,7 @@ function AboutPage() {
             </Reveal>
             <div className="mt-8 space-y-3">
               {STRENGTHS.map((s) => (
-                <div key={s} className="flex items-center gap-3 rounded-xl border border-amber-900/15 bg-white p-3.5 text-sm font-medium text-[#382618] shadow-xs">
+                <div key={s} className="flex items-center gap-3 rounded-xl border border-amber-900/15 paper-card p-3.5 text-sm font-medium text-[#382618] shadow-xs">
                   <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
                     ✓
                   </span>
@@ -175,16 +186,19 @@ function AboutPage() {
       <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide">
           <SectionHeading eyebrow="Journey" title="Milestones, not slogans." />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TIMELINE.map((item, i) => (
               <Reveal
                 key={item.year}
-                delay={i * 20}
-                className="rounded-2xl border border-amber-900/15 bg-white/80 p-6 transition-all duration-300 hover:border-amber-500/50 hover:bg-white hover:shadow-md"
+                delay={i * 30}
+                className="relative overflow-hidden rounded-2xl border border-amber-900/15 paper-card p-6 transition-all duration-300 hover:border-amber-500/50 hover:shadow-md"
               >
-                <span className="inline-block rounded-lg bg-amber-100 px-3 py-1 font-sans text-xs font-bold text-amber-900 border border-amber-900/15">
-                  {item.year}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="mono-spec rounded-lg bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
+                    {item.year}
+                  </span>
+                  <OrigamiBirdSmall className="size-4 text-amber-600/40" />
+                </div>
                 <p className="mt-4 text-sm leading-relaxed text-[#5c4a3e] font-medium">
                   {item.copy}
                 </p>

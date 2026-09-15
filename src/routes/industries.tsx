@@ -118,6 +118,13 @@ function IndustriesEasterEgg() {
         <text x="0" y="14">ECT: 32-55 LBS/IN · BCT CALIBRATED</text>
         <text x="0" y="28">DISPATCH: 26 UNITS IN-HOUSE CARRIER</text>
       </g>
+
+      {/* Origami Bird Escort Over Transit Route */}
+      <g transform="translate(230, 80) scale(0.6)" opacity="0.8">
+        <polygon points="30,22 52,6 42,27" fill="#d97706" fillOpacity="0.4" stroke="#b45309" strokeWidth="1" />
+        <polygon points="30,22 8,8 20,27" fill="#f59e0b" fillOpacity="0.5" stroke="#d97706" strokeWidth="1" />
+        <polygon points="30,22 42,27 27,39 20,27" fill="#b45309" fillOpacity="0.3" stroke="#92400e" strokeWidth="1" />
+      </g>
     </svg>
   );
 }
@@ -159,9 +166,9 @@ function IndustriesPage() {
                     className="aspect-[16/11] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1c120c]/95 via-[#1c120c]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1c120c]/85 via-[#1c120c]/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
-                  <span className="inline-block rounded-full bg-amber-400/20 px-3 py-1 font-sans text-xs font-bold tracking-widest text-amber-400 backdrop-blur-md border border-amber-400/30">
+                  <span className="mono-spec inline-block rounded-full bg-amber-400/20 px-3 py-1 font-bold text-amber-400 backdrop-blur-md border border-amber-400/30">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-[#fbf8f2] md:text-3xl">

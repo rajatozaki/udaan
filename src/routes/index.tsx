@@ -7,6 +7,7 @@ import { ImageRail } from "@/components/image-rail";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
+import { OrigamiBirdHero, OrigamiBirdSmall, OrigamiFoldDivider } from "@/components/origami-birds";
 import { useQuote } from "@/lib/quote";
 import {
   CERTS,
@@ -100,9 +101,8 @@ function Home() {
               strokeDasharray="8 6"
             />
 
-            {/* Stylized Udaan Brand Sprout / Wings Emblem Watermark (Behind Left Headline & Center) */}
+            {/* Stylized Udaan Brand Wings Watermark */}
             <g transform="translate(140, 110) scale(1.7)" strokeOpacity="0.22" fillOpacity="0.04">
-              {/* Left Wing / Sprout Petals */}
               <path
                 d="M 100 160 C 85 105, 35 70, 0 75 C 40 90, 70 120, 85 160 Z"
                 fill="#d97706"
@@ -119,8 +119,6 @@ function Home() {
                 stroke="#b45309"
                 strokeWidth="0.7"
               />
-
-              {/* Right Wing / Sprout Petals */}
               <path
                 d="M 100 160 C 115 105, 165 70, 200 75 C 160 90, 130 120, 115 160 Z"
                 fill="#d97706"
@@ -137,8 +135,6 @@ function Home() {
                 stroke="#b45309"
                 strokeWidth="0.7"
               />
-
-              {/* Central Sprout Stem */}
               <path
                 d="M 100 160 L 100 185"
                 stroke="#b45309"
@@ -146,40 +142,24 @@ function Home() {
                 strokeLinecap="round"
               />
             </g>
-
-            {/* Second Subtle Wing Motif in Upper Right */}
-            <g transform="translate(1060, 50) scale(1.2) rotate(10)" strokeOpacity="0.16" fillOpacity="0.03">
-              <path
-                d="M 100 160 C 85 105, 35 70, 0 75 C 40 90, 70 120, 85 160 Z"
-                fill="#b45309"
-                stroke="#b45309"
-                strokeWidth="1.2"
-              />
-              <path
-                d="M 100 160 C 115 105, 165 70, 200 75 C 160 90, 130 120, 115 160 Z"
-                fill="#b45309"
-                stroke="#b45309"
-                strokeWidth="1.2"
-              />
-            </g>
           </svg>
         </div>
 
         {/* Hero Content Container */}
-        <div className="hero-enter site-wrap-wide relative z-10 mx-auto w-full py-28 md:py-36">
+        <div className="hero-enter site-wrap-wide relative z-10 mx-auto w-full py-24 md:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
             
             {/* Left Column: Bold Industrial Headline & Value Proposition */}
             <div className="lg:col-span-7">
               <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-amber-900/15 bg-amber-600/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-950 shadow-xs backdrop-blur-md">
-                <span className="size-2 rounded-full bg-emerald-600 animate-pulse" />
+                <OrigamiBirdSmall className="size-3.5 text-amber-800" />
                 <span>Udaan Paper Industries · Est. 1986</span>
               </div>
 
               <h1 className="font-display text-5xl font-extrabold tracking-tight text-[#221610] sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02]">
                 Built to hold.
                 <br />
-                <span className="bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent">
+                <span className="text-amber-800">
                   Made to move.
                 </span>
               </h1>
@@ -228,10 +208,15 @@ function Home() {
               </div>
             </div>
 
-            {/* Right Column: Minimal Paper Packaging Craft Showcase */}
-            <div className="hidden lg:block lg:col-span-5">
-              <div className="group overflow-hidden rounded-3xl border border-amber-900/15 bg-white/90 p-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-amber-900/15">
-                {/* Clean, Minimal Kraft Boxes Photography */}
+            {/* Right Column: Minimal Paper Packaging Craft Showcase with Origami Crane Backdrop */}
+            <div className="hidden lg:block lg:col-span-5 relative">
+              {/* Soaring Origami Crane Motif in Hero Background */}
+              <div className="absolute -top-16 -right-10 pointer-events-none opacity-[0.22] select-none" aria-hidden="true">
+                <OrigamiBirdHero className="size-[28rem] text-amber-600" />
+              </div>
+
+              <div className="group relative z-10 overflow-hidden rounded-3xl border border-amber-900/15 bg-[#fbf8f2]/95 p-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-amber-900/20">
+                {/* Clean, Minimal Kraft Boxes Photography with Asymmetric Rounded Styling */}
                 <div className="relative overflow-hidden rounded-2xl border border-amber-900/10 shadow-sm">
                   <img
                     src="/images/udaan-minimal-boxes.jpg"
@@ -264,18 +249,18 @@ function Home() {
         </div>
       </section>
 
-      {/* Modern Bento Stats Strip */}
-      <section className="relative z-20 -mt-10 px-4 sm:px-6">
-        <div className="site-wrap-wide grid grid-cols-2 gap-4 rounded-3xl border border-amber-900/30 bg-[#221610] p-4 shadow-2xl backdrop-blur-xl md:grid-cols-4 md:p-6">
-          {STATS.map((stat) => (
+      {/* Editorial Print-Inspired Stats Strip */}
+      <section className="border-y border-amber-900/15 bg-[#f5eedf]/90 py-10">
+        <div className="site-wrap-wide grid grid-cols-2 gap-8 divide-y divide-amber-900/10 sm:divide-y-0 sm:divide-x sm:divide-amber-900/15 md:grid-cols-4">
+          {STATS.map((stat, i) => (
             <div
               key={stat.label}
-              className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-all duration-300 hover:border-amber-500/40 hover:bg-white/[0.08] md:p-6"
+              className={`flex flex-col justify-between ${i > 0 ? "sm:pl-8" : ""} ${i > 1 ? "pt-6 sm:pt-0" : ""}`}
             >
-              <p className="font-display text-3xl font-bold tracking-tight text-amber-400 md:text-5xl">
+              <div className="flex items-baseline gap-1 font-display text-4xl font-extrabold tracking-tight text-[#221610] md:text-5xl">
                 <CountUp value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-[#dfd0c0] sm:text-sm">
+              </div>
+              <p className="mono-spec mt-2 text-[#6b584c] font-semibold">
                 {stat.label}
               </p>
             </div>
@@ -361,7 +346,7 @@ function Home() {
               <Reveal key={person.name} delay={i * 60}>
                 <Link
                   to="/about"
-                  className="group block overflow-hidden rounded-3xl border border-amber-900/15 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
+                  className="group block overflow-hidden rounded-3xl paper-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
                   <div className="overflow-hidden rounded-2xl bg-amber-50/40">
                     <img
@@ -399,7 +384,7 @@ function Home() {
                 <Link
                   to="/solutions"
                   hash={product.slug}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl paper-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
                   <div className="overflow-hidden bg-amber-50/40">
                     <img
@@ -410,7 +395,7 @@ function Home() {
                   </div>
                   <div className="flex flex-1 items-start justify-between gap-4 p-8">
                     <div>
-                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
+                      <span className="mono-spec inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
                         {product.kicker}
                       </span>
                       <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-[#221610] md:text-3xl">
@@ -432,6 +417,11 @@ function Home() {
       </section>
 
       <section className="relative overflow-hidden border-y border-amber-900/20 bg-[#1c120c] py-20 text-[#fbf8f2] md:py-28">
+        {/* Origami Crane Watermark Motif */}
+        <div className="absolute -left-12 -top-10 pointer-events-none opacity-[0.06] select-none" aria-hidden="true">
+          <OrigamiBirdHero className="size-96 text-amber-500" />
+        </div>
+
         <div className="site-wrap-wide relative z-10">
           <SectionHeading
             onDark
@@ -449,10 +439,10 @@ function Home() {
               <Reveal
                 key={step.n}
                 delay={i * 50}
-                className="flex flex-col justify-between rounded-2xl border border-amber-900/30 bg-white/[0.04] p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.08]"
+                className="flex flex-col justify-between rounded-2xl border border-amber-900/30 bg-[#251a12]/85 p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-[#2c1f17]"
               >
                 <div>
-                  <span className="inline-block rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-1 font-sans text-xs font-bold tracking-widest text-amber-400">
+                  <span className="mono-spec inline-block rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-1 font-bold text-amber-400">
                     {step.n}
                   </span>
                   <h3 className="mt-6 font-display text-xl font-bold text-white">{step.title}</h3>
@@ -499,9 +489,9 @@ function Home() {
                       className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1c120c]/95 via-[#1c120c]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1c120c]/80 via-[#1c120c]/25 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <span className="inline-block rounded-full bg-amber-400/20 px-2.5 py-0.5 font-sans text-xs font-bold tracking-widest text-amber-400 backdrop-blur-md border border-amber-400/30">
+                    <span className="mono-spec inline-block rounded-full bg-amber-400/20 px-2.5 py-0.5 font-bold text-amber-400 backdrop-blur-md border border-amber-400/30">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="mt-2 font-display text-xl font-bold tracking-tight text-[#fbf8f2]">
@@ -536,7 +526,7 @@ function Home() {
                 <Link
                   to="/plants"
                   hash={plant.id}
-                  className="group block overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
+                  className="group block overflow-hidden rounded-3xl paper-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
                 >
                   <div className="overflow-hidden bg-amber-50/40">
                     <img
@@ -547,7 +537,7 @@ function Home() {
                   </div>
                   <div className="p-8">
                     <div className="flex items-center justify-between gap-4">
-                      <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
+                      <span className="mono-spec inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
                         {plant.serves}
                       </span>
                       <div className="flex size-9 items-center justify-center rounded-xl border border-amber-900/20 bg-amber-50/50 text-amber-800 transition-all group-hover:border-amber-500 group-hover:bg-amber-500 group-hover:text-[#18110a]">
@@ -558,14 +548,14 @@ function Home() {
                       {plant.name}
                     </h3>
                     <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-[#5c4a3e]">
-                      <span className="rounded-lg bg-white px-2.5 py-1 border border-amber-900/15">
+                      <span className="mono-spec rounded-lg bg-[#f4eee2] px-2.5 py-1 border border-amber-900/15">
                         {plant.capacity} installed
                       </span>
-                      <span className="rounded-lg bg-white px-2.5 py-1 border border-amber-900/15">
+                      <span className="mono-spec rounded-lg bg-[#f4eee2] px-2.5 py-1 border border-amber-900/15">
                         {plant.area}
                       </span>
                       {plant.expanding ? (
-                        <span className="rounded-lg bg-amber-50 px-2.5 py-1 border border-amber-200 text-amber-700 font-semibold">
+                        <span className="mono-spec rounded-lg bg-amber-100/70 px-2.5 py-1 border border-amber-300 text-amber-900 font-bold">
                           expanding to {plant.expanding}
                         </span>
                       ) : null}
@@ -588,7 +578,7 @@ function Home() {
         <div className="site-wrap-wide relative z-10 grid gap-12 py-20 md:grid-cols-12 md:py-28">
           <Reveal className="md:col-span-5">
             <div className="mb-3 flex items-center gap-2">
-              <span className="size-2 rounded-full bg-amber-400" />
+              <OrigamiBirdSmall className="size-3.5 text-amber-400" />
               <p className="eyebrow text-xs tracking-widest text-amber-400">Trusted by</p>
             </div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -607,7 +597,7 @@ function Home() {
                   key={c}
                   className="flex items-center gap-3 rounded-2xl border border-amber-900/30 bg-[#251a12]/90 p-4 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:border-amber-400/40 hover:bg-[#2c1f17]"
                 >
-                  <span className="size-2 rounded-full bg-amber-400" />
+                  <OrigamiBirdSmall className="size-3 text-amber-400 shrink-0" />
                   {c}
                 </div>
               ))}
@@ -620,7 +610,7 @@ function Home() {
         <div className="site-wrap-wide grid gap-8 md:grid-cols-12 md:items-center">
           <div className="md:col-span-3">
             <div className="flex items-center gap-2">
-              <span className="size-2 rounded-full bg-amber-600" />
+              <OrigamiBirdSmall className="size-3 text-amber-700" />
               <p className="eyebrow text-xs text-amber-700">Certified systems</p>
             </div>
             <p className="mt-2 text-sm font-medium text-[#6b584c]">Global standards & audits</p>
@@ -629,7 +619,7 @@ function Home() {
             {CERTS.map((c) => (
               <div
                 key={c.code}
-                className="rounded-2xl border border-amber-900/15 bg-white/80 p-4 shadow-xs transition-all hover:border-amber-500/50 hover:bg-white hover:shadow-md"
+                className="rounded-2xl border border-amber-900/15 paper-card p-4 shadow-xs transition-all hover:border-amber-500/50 hover:shadow-md"
               >
                 <p className="font-sans text-sm font-bold text-[#221610]">{c.code}</p>
                 <p className="mt-1 text-xs text-[#6b584c]">{c.name}</p>

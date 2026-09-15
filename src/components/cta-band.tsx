@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
+import { OrigamiBirdSeal, OrigamiBirdSmall } from "@/components/origami-birds";
 import { useQuote } from "@/lib/quote";
 
 export function CtaBand({
@@ -13,16 +14,21 @@ export function CtaBand({
   return (
     <section className="relative overflow-hidden border-t border-amber-900/20 bg-[#19110a] py-16 text-fg md:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/15 via-transparent to-transparent pointer-events-none" />
-      <div className="site-wrap-wide relative z-10 flex flex-col items-start justify-between gap-8 rounded-3xl border border-amber-900/30 bg-[#241911]/90 p-8 backdrop-blur-md md:flex-row md:items-center md:p-12 shadow-2xl">
-        <Reveal className="max-w-2xl">
+      <div className="site-wrap-wide relative z-10 overflow-hidden flex flex-col items-start justify-between gap-8 rounded-3xl border border-amber-900/30 bg-[#241911]/90 p-8 backdrop-blur-md md:flex-row md:items-center md:p-12 shadow-2xl">
+        {/* Subtle Background Origami Seal */}
+        <div className="absolute -right-6 -bottom-6 pointer-events-none opacity-[0.07]" aria-hidden="true">
+          <OrigamiBirdSeal className="size-56 text-amber-400" />
+        </div>
+
+        <Reveal className="max-w-2xl relative z-10">
           <div className="mb-3 flex items-center gap-2">
-            <span className="size-2 rounded-full bg-amber-400" />
+            <OrigamiBirdSmall className="size-3.5 text-amber-400" />
             <p className="eyebrow text-xs tracking-widest text-amber-400">Work with Udaan</p>
           </div>
           <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
             {title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[#d8c5b4] sm:text-lg">
             {copy}
           </p>
         </Reveal>

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
+import { OrigamiBirdSmall, OrigamiBirdSeal } from "@/components/origami-birds";
 import { useQuote } from "@/lib/quote";
 import { GALLERY, PRODUCTS } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -38,8 +39,17 @@ function SolutionsPage() {
             viewBox="0 0 900 600"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -top-12 left-8 size-[42rem] opacity-[0.18] pointer-events-none"
+            className="absolute -top-12 left-8 size-[42rem] opacity-[0.22] pointer-events-none"
           >
+            {/* Origami Crane in Flight carrying folding net */}
+            <g transform="translate(680, 50) scale(0.95)">
+              <polygon points="60,20 110,6 88,38" fill="#d97706" fillOpacity="0.25" stroke="#b45309" strokeWidth="1.2" />
+              <polygon points="60,20 14,8 38,38" fill="#f59e0b" fillOpacity="0.35" stroke="#d97706" strokeWidth="1.2" />
+              <polygon points="60,20 88,38 52,58 38,38" fill="#b45309" fillOpacity="0.2" stroke="#92400e" strokeWidth="1.2" />
+              <polygon points="38,38 24,46 14,36" fill="#d97706" fillOpacity="0.4" stroke="#92400e" strokeWidth="1" />
+              <line x1="52" y1="58" x2="52" y2="100" stroke="#d97706" strokeWidth="0.8" strokeDasharray="2 3" />
+            </g>
+
             {/* Box Die-Cut Folding Net Schematic */}
             <g transform="translate(60, 80) scale(0.9)" stroke="#b45309" strokeWidth="1">
               {/* Main Panels */}
@@ -65,7 +75,7 @@ function SolutionsPage() {
               <polygon points="540,300 550,360 630,360 640,300" fill="none" stroke="#d97706" strokeWidth="0.8" />
 
               {/* Dimension Calipers */}
-              <line x1="120" y1="410" x2="640" y2="410" stroke="#78350f" strokeWidth="0.8" markerEnd="url(#arrow)" />
+              <line x1="120" y1="410" x2="640" y2="410" stroke="#78350f" strokeWidth="0.8" />
               <text x="380" y="425" textAnchor="middle" fill="#78350f" fontSize="9" fontWeight="bold" letterSpacing="1">L + W + H CALIPER TOLERANCE ±0.5MM</text>
             </g>
 
@@ -104,7 +114,7 @@ function SolutionsPage() {
             )}
           >
             <Reveal variant="image" className="img-zoom md:col-span-6">
-              <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
+              <div className="overflow-hidden rounded-3xl border border-amber-900/15 paper-card shadow-xl">
                 <img
                   src={product.image}
                   alt=""
@@ -113,7 +123,7 @@ function SolutionsPage() {
               </div>
             </Reveal>
             <div className="md:col-span-6 md:px-4">
-              <span className="inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
+              <span className="mono-spec inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
                 {product.kicker}
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-[#221610] sm:text-4xl">
@@ -136,7 +146,12 @@ function SolutionsPage() {
       ))}
 
       <section className="relative overflow-hidden border-y border-amber-900/20 bg-[#1c120c] py-20 text-[#fbf8f2] md:py-28">
-        <div className="site-wrap-wide grid gap-12 md:grid-cols-2 md:items-center">
+        {/* Origami Crane Watermark in Dark Capability Section */}
+        <div className="absolute -right-8 -bottom-8 pointer-events-none opacity-[0.06] select-none" aria-hidden="true">
+          <OrigamiBirdSeal className="size-80 text-amber-500" />
+        </div>
+
+        <div className="site-wrap-wide relative z-10 grid gap-12 md:grid-cols-2 md:items-center">
           <SectionHeading
             onDark
             eyebrow="Capability"
@@ -157,9 +172,12 @@ function SolutionsPage() {
             ].map(([t, d]) => (
               <div
                 key={t}
-                className="rounded-2xl border border-amber-900/30 bg-white/[0.04] p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.08]"
+                className="rounded-2xl border border-amber-900/30 bg-[#251a12]/85 p-6 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-[#2c1f17]"
               >
-                <h3 className="font-display text-xl font-bold text-white">{t}</h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="font-display text-xl font-bold text-white">{t}</h3>
+                  <OrigamiBirdSmall className="size-4 text-amber-500/40" />
+                </div>
                 <p className="mt-3 text-sm leading-relaxed text-[#dfd0c0]">{d}</p>
               </div>
             ))}

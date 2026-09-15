@@ -86,6 +86,13 @@ function PlantsEasterEgg() {
         <text x="460" y="152" fill="currentColor" fontSize="6.5" fontFamily="monospace" textAnchor="middle">AUTO STACKER</text>
       </g>
 
+      {/* Origami Crane Perched Atop Plant Line */}
+      <g transform="translate(450, 45) scale(0.65)">
+        <polygon points="24,18 42,4 34,22" fill="#d97706" fillOpacity="0.4" stroke="#b45309" strokeWidth="1" />
+        <polygon points="24,18 6,6 16,22" fill="#f59e0b" fillOpacity="0.5" stroke="#d97706" strokeWidth="1" />
+        <polygon points="24,18 34,22 22,32 16,22" fill="#b45309" fillOpacity="0.3" stroke="#92400e" strokeWidth="1" />
+      </g>
+
       {/* Dual Manufacturing Plant Geographic Coordinates */}
       <g transform="translate(30, 215)" opacity="0.8" fontFamily="monospace">
         {/* Pithampur Node */}
@@ -133,7 +140,7 @@ function PlantsPage() {
         >
           <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-12 md:gap-16">
             <Reveal variant="image" className="img-zoom md:col-span-7">
-              <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
+              <div className="overflow-hidden rounded-3xl border border-amber-900/15 paper-card shadow-xl">
                 <img
                   src={plant.image}
                   alt=""
@@ -142,7 +149,7 @@ function PlantsPage() {
               </div>
             </Reveal>
             <div className="md:col-span-5">
-              <span className="inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-900 uppercase border border-amber-900/15">
+              <span className="mono-spec inline-block rounded-full bg-amber-100 px-3.5 py-1 text-xs font-bold text-amber-900 border border-amber-900/15">
                 {plant.region}
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-[#221610] sm:text-4xl">
@@ -150,7 +157,7 @@ function PlantsPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[#6b584c]">{plant.address}</p>
               
-              <div className="mt-8 overflow-hidden rounded-2xl border border-amber-900/15 bg-white p-5 shadow-xs">
+              <div className="mt-8 overflow-hidden rounded-2xl border border-amber-900/15 paper-card p-5 shadow-xs">
                 <dl className="divide-y divide-amber-900/10">
                   {[
                     ["Serves", plant.serves],
@@ -162,7 +169,7 @@ function PlantsPage() {
                     .filter((row): row is [string, string] => Boolean(row))
                     .map(([k, v]) => (
                       <div key={k} className="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
-                        <dt className="text-xs font-bold uppercase tracking-wider text-[#8c7462]">
+                        <dt className="mono-spec text-xs font-bold text-[#8c7462]">
                           {k}
                         </dt>
                         <dd className="font-semibold text-[#221610] text-sm">{v}</dd>
@@ -205,7 +212,7 @@ function PlantsPage() {
       <section className="bg-paper border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal variant="image" className="img-zoom md:order-2">
-            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 paper-card shadow-xl">
               <img
                 src="/images/real-lab.jpg"
                 alt="In-house quality laboratory"
@@ -228,9 +235,9 @@ function PlantsPage() {
               {EQUIPMENT.map((e) => (
                 <div
                   key={e}
-                  className="flex items-center gap-2.5 rounded-xl border border-amber-900/15 bg-white/80 p-3 text-xs font-semibold text-[#382618]"
+                  className="flex items-center gap-2.5 rounded-xl border border-amber-900/15 paper-card p-3 text-xs font-semibold text-[#382618]"
                 >
-                  <span className="size-2 rounded-full bg-amber-600" />
+                  <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-bold text-amber-700">✓</span>
                   {e}
                 </div>
               ))}
@@ -239,9 +246,9 @@ function PlantsPage() {
               {CERTS.map((c) => (
                 <div
                   key={c.code}
-                  className="rounded-xl border border-amber-900/15 bg-white p-3 shadow-xs"
+                  className="rounded-xl border border-amber-900/15 paper-card p-3 shadow-xs"
                 >
-                  <p className="text-xs font-bold text-[#221610]">{c.code}</p>
+                  <p className="mono-spec font-bold text-[#221610]">{c.code}</p>
                   <p className="text-[0.7rem] text-[#6b584c]">{c.name}</p>
                 </div>
               ))}

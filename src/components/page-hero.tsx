@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { OrigamiBirdSmall } from "@/components/origami-birds";
 
 export function PageHero({
   eyebrow,
@@ -42,7 +43,7 @@ export function PageHero({
         <div className="hero-enter relative z-10 flex flex-col justify-end px-6 pb-12 pt-32 sm:px-10 md:col-span-7 md:pb-16 md:pt-40 lg:px-16">
           {eyebrow ? (
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-900/15 bg-amber-600/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-amber-950 shadow-xs backdrop-blur-md">
-              <span className="size-2 rounded-full bg-emerald-600 animate-pulse" />
+              <OrigamiBirdSmall className="size-3 text-amber-800" />
               <p className="eyebrow">{eyebrow}</p>
             </div>
           ) : null}

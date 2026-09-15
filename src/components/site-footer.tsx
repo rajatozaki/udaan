@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { OrigamiBirdSeal } from "@/components/origami-birds";
 import { NAV, PLANTS, SITE } from "@/lib/site";
 import { useQuote } from "@/lib/quote";
 
@@ -8,8 +9,13 @@ export function SiteFooter() {
   const { setOpen } = useQuote();
 
   return (
-    <footer className="border-t border-amber-900/20 bg-[#18110a] text-[#fbf8f2]">
-      <div className="site-wrap-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
+    <footer className="relative overflow-hidden border-t border-amber-900/20 bg-[#18110a] text-[#fbf8f2]">
+      {/* Background Origami Crane Watermark Seal */}
+      <div className="absolute -right-8 -bottom-8 pointer-events-none opacity-[0.06] select-none" aria-hidden="true">
+        <OrigamiBirdSeal className="size-80 text-amber-500" />
+      </div>
+
+      <div className="site-wrap-wide relative z-10 grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
           <Logo onDark size="lg" />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#d8c5b4]">

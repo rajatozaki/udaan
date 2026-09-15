@@ -72,7 +72,7 @@ function SustainabilityEasterEgg() {
         <path d="M 25 100 A 70 70 0 0 1 70 12" fill="none" strokeWidth="2" />
         <polygon points="65,8 74,13 67,21" fill="currentColor" />
 
-        {/* Center Emblem: Stylized Leaf / Cellulose Fibre */}
+        {/* Center Emblem: Stylized Leaf / Cellulose Fibre with Origami Crane Nesting */}
         <path
           d="M 80 45 C 105 55, 110 85, 80 115 C 50 85, 55 55, 80 45 Z"
           fill="none"
@@ -80,6 +80,13 @@ function SustainabilityEasterEgg() {
         />
         <line x1="80" y1="50" x2="80" y2="110" strokeWidth="1.2" />
         <path d="M 80 70 L 95 62 M 80 85 L 95 77 M 80 70 L 65 62 M 80 85 L 65 77" strokeWidth="1" />
+
+        {/* Origami Crane in Eco-Loop Center */}
+        <g transform="translate(68, 65) scale(0.5)">
+          <polygon points="24,18 42,4 34,22" fill="#d97706" fillOpacity="0.4" stroke="#b45309" strokeWidth="1" />
+          <polygon points="24,18 6,6 16,22" fill="#f59e0b" fillOpacity="0.5" stroke="#d97706" strokeWidth="1" />
+          <polygon points="24,18 34,22 22,32 16,22" fill="#b45309" fillOpacity="0.3" stroke="#92400e" strokeWidth="1" />
+        </g>
 
         {/* Stage Labels around circle */}
         <text x="80" y="0" fill="currentColor" fontSize="7" fontWeight="bold" fontFamily="monospace" textAnchor="middle">01 · RECOVERED FIBRE</text>
@@ -179,11 +186,14 @@ function SustainabilityPage() {
             <Reveal
               key={p.n}
               delay={i * 50}
-              className="rounded-3xl border border-amber-900/30 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.07] md:p-10"
+              className="rounded-3xl border border-amber-900/30 bg-[#251a12]/85 p-8 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-[#2c1f17] md:p-10"
             >
-              <span className="inline-block rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-sans text-xs font-bold tracking-widest text-amber-400">
-                {p.n}
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="mono-spec inline-block rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-bold text-amber-400">
+                  {p.n}
+                </span>
+                <span className="mono-spec text-[10px] text-amber-500/50">Udaan Bio-Cycle</span>
+              </div>
               <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-[#fbf8f2] md:text-3xl">
                 {p.t}
               </h3>
@@ -198,7 +208,7 @@ function SustainabilityPage() {
       <section className="bg-paper-2 border-t border-amber-900/10 py-20 md:py-28">
         <div className="site-wrap-wide grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="img-zoom">
-            <div className="overflow-hidden rounded-3xl border border-amber-900/15 bg-white shadow-xl">
+            <div className="overflow-hidden rounded-3xl border border-amber-900/15 paper-card shadow-xl">
               <img
                 src="/images/flute.jpg"
                 alt="Corrugated flute fibre"
